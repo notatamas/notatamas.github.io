@@ -1,0 +1,41 @@
+# Site settings
+title: FOSS IoW Council
+title_description: A free and open-source GIS initiative for the Isle of Wight Council
+header-img: img/iow_header.jpg
+email:
+copyright_name: "Tomás Antal"
+description: "A free and open-source GIS initiative for the Isle of Wight Council"
+baseurl: "" #
+url: "http://notatamas.github.io"
+gm_api_key: "AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI"
+gm_iow_center: "{lat: 50.684268, lng: -1.291813}"
+twitter_username: tomas_antal
+github_username:  notatamas/notatamas.github.io
+
+
+
+#Collections
+collections:
+  maps:
+    output: true
+  ossbenefits:
+    output: true
+  tourist_info:
+
+defaults:
+  - scope:
+      path: ""
+      type: ossbenefits
+    values:
+      layout: ossbenefit
+
+
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]

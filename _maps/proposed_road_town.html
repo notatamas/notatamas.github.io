@@ -1,0 +1,40 @@
+---
+title: Proposed road and town map
+description: Proposed road and town map implemented in ArcGIS
+img: small_map1.jpg
+layout: map
+type: proposed
+---
+
+<div id="map" style="height:800px;width:100%;"></div>
+    <script>
+      var markers = {{ site.data.locations | jsonify }};
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {{ site.gm_iow_center }},
+          zoom: 11
+        });
+        for (var i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+        var marker = new google.maps.Marker({
+  				position: position,
+  				map: map,
+  				title: markers[i].name
+  			});
+
+        var content = "<h4>" + markers[i].name + "</h4>" + "</br>" + "population: " + markers[i].population;
+        var infowindow = new google.maps.InfoWindow()
+        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                return function() {
+                   infowindow.setContent(content);
+                   infowindow.open(map,marker);
+                };
+            })(marker,content,infowindow));
+      }
+
+
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.gm_api_key }}&callback=initMap"
+    async defer></script>

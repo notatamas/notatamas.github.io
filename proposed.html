@@ -1,0 +1,11 @@
+---
+title: Proposed maps
+layout: map_list
+description: "Overview of the current GIS solutions used by the Isle of Wight Council"
+---
+
+{% for map in site.maps %}
+{% if map.type == "proposed" %}
+  {% include map_list.html %}
+{% endif %}
+{% endfor %}

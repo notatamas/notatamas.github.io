@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+
+    <title>Proposed road and town map - FOSS IoW Council</title>
+
+    <link rel="canonical" href="http://localhost:4000/maps/proposed_road_town/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS fo the Clean blog theme -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="FOSS IoW Council" />
+
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FOSS IoW Council</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+				
+                <li>
+                    <a href="/current/">Current maps</a>
+                </li>
+				
+                
+				
+                <li>
+                    <a href="/proposed/">Proposed maps</a>
+                </li>
+				
+                
+				
+                <li>
+                    <a href="/tourist/">Tourist map</a>
+                </li>
+				
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+  <!--  </div> -->
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/iow_header.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Proposed road and town map</h1>
+                    <hr class="small">
+                    <span class="subheading">Proposed road and town map implemented in ArcGIS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- The content of each map -->
+<div class="row">
+  <div class="col-sm-2"> </div>
+    <div class="col-sm-8">
+      <div class="container-fluid text-center ">
+        <p>
+          <h1>Proposed road and town map</h1>
+        </p>
+
+        <div id="map" style="height:800px;width:100%;"></div>
+    <script>
+      var markers = [{"latitude":"50.761838","longitude":"-1.2978347","name":"Cowes","population":"16278"},{"latitude":"50.701712","longitude":"-1.2888204","name":"Newport","population":"20324"},{"latitude":"50.729436","longitude":"-1.1577647","name":"Ryde","population":"19843"},{"latitude":"50.685672","longitude":"-1.0787102","name":"Bembridge","population":"3452"},{"latitude":"50.679306","longitude":"-1.1399791","name":"Brading","population":"2071"},{"latitude":"50.758148","longitude":"-1.2825783","name":"East Cowes","population":"209"},{"latitude":"50.654764","longitude":"-1.1534418","name":"Sandown","population":"4813"},{"latitude":"50.628104","longitude":"-1.1728659","name":"Shanklin","population":"8140"},{"latitude":"50.685663","longitude":"-1.5291400","name":"Totland","population":"2316"},{"latitude":"50.595948","longitude":"-1.2042300","name":"Ventnor","population":"6458"}];
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 50.684268, lng: -1.291813},
+          zoom: 11
+        });
+        for (var i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+        var marker = new google.maps.Marker({
+  				position: position,
+  				map: map,
+  				title: markers[i].name
+  			});
+
+        var content = "<h4>" + markers[i].name + "</h4>" + "</br>" + "population: " + markers[i].population;
+        var infowindow = new google.maps.InfoWindow()
+        google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+                return function() {
+                   infowindow.setContent(content);
+                   infowindow.open(map,marker);
+                };
+            })(marker,content,infowindow));
+      }
+
+
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"
+    async defer></script>
+
+      </div>
+    </div>
+  <div class="col-sm-2"> </div>
+</div>
+
+
+    <!-- Footer -->
+<hr />
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="https://twitter.com/tomas_antal">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/notatamas/notatamas.github.io">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                  <p class="copyright">Created with the <a href="https://jekyllrb.com/">Jekyll</a> static site generator,
+                     written in the <a href="https://www.ruby-lang.org/en/">Ruby</a> programming language.
+                     The site generation is implemented in the <a href="http://shopify.github.io/liquid/">Liquid</a> template language.
+                      Hosted on <a href="https://pages.github.com/">Github Pages</a>,
+                      the layout is based on <a href="http://getbootstrap.com/">Bootstrap</a>
+                      and <a href="https://jquery.com/">jQuery</a>
+                      and inspired by the <a href="https://startbootstrap.com/template-overviews/clean-blog/">Clean blog</a> Bootstrap theme
+                      by <a href="http://davidmiller.io/">David Miller</a>.</p>
+                <p class="copyright text-muted">Copyright &copy; Tomás Antal 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

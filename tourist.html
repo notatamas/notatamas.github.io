@@ -1,0 +1,58 @@
+---
+title: Tourist map
+layout: page
+description: "Simplified tourist information of the Isle of Wight"
+header-img: "img/iow_header.jpg"
+---
+
+<div class="container">
+    <div class="row">
+
+      <h1>Interactive image map of the attractions in the Isle of Wight</h1>
+      <p>
+        Hover above the marked areas to show the name of the attraction.
+        Click on the area for additional information.
+      </p>
+
+      <ul class="list-group">
+        {% for info in site.tourist_info %}
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#{{ info.slug }}"><b>{{ info.title }}</b> |
+          <small> {% if info.description%} {{ info.description | truncatewords: 15, " ..." }} {% else %} {{ info.content | truncatewords: 15, " ..." }} {% endif %}</small></a>
+        {% endfor %}
+      </ul>
+
+<img src="{{ site.baseurl }}/img/iow_map.jpg" alt="Tourist map" usemap="#touristmap">
+
+<map name="touristmap">
+  {% for info in site.tourist_info %}
+    <area shape="{{ info.shape }}" coords="{{ info.coords }}" alt="Sun" data-toggle="modal" data-target="#{{ info.slug }}" data-toggle="tooltip" title="{{ info.title }}">
+  {% endfor %}
+</map>
+
+  {% for info in site.tourist_info %}
+<div id="{{ info.slug }}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{ info.title }}</h4>
+      </div>
+      <div class="modal-body">
+        {% if info.description %}<b>{{ info.description }}</b>{% endif %}
+           <p>{{ info.content }} {% if info.source %}<a href="{{ info.source }}">(Source)</a> {% endif %}</p>
+          {% if info.source %} <p><a href="{{ info.source }}">More info</a></p> {% endif %}
+           <p>{% if info.img %} <img class="img-map" src="{{ site.baseurl }}{{ info.img }}" alt="test" width="1200px" height="768px" /> {% endif %} </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  {% endfor %}
+</div>
+</div>

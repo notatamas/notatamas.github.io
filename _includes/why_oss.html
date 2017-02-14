@@ -1,0 +1,17 @@
+
+<div class="intro">
+    <div class="container text-center">
+        <div class="row centered">
+            <h1> Why choose open-source?</h1>
+            <p>            </p>
+            {% for benefit in site.ossbenefits %}
+            <div class="col-md-4">
+                <i class="fa {{ benefit.icon }} fa-5x"></i>
+                <h4>{{ benefit.title }}</h4>
+                <p class="text-justify">{{ benefit.description }}</p>
+                <a href="{{ benefit.url }}" role="button" class="btn btn-default">More info</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

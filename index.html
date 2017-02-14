@@ -1,0 +1,48 @@
+---
+layout: page
+description: "An Open Source Goverment Initiative of the Isle of WIght"
+header-img: "img/iow_header.jpg"
+---
+
+{% include intro.html %}
+
+{% include purpose.html %}
+
+{% include why_oss.html %}
+
+
+<div class="row bg-grey">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="container-fluid text-center ">
+            <p>
+                <h1>Current GIS solutions</h1>
+                <h4>The current GIS solutions include the following maps:</h4>
+            </p>
+            {% assign current_map = site.maps | where:"type","current" %}
+            {% for map in current_map limit:3 %}
+                {% include map_list.html %}
+            {% endfor %}
+
+            <a href="{{ site.baseurl }}/current" role="button" class="btn btn-info btn-lg">See all current maps</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="row bg-grey">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="container-fluid text-center ">
+            <p>
+                <h1>Proposed GIS solutions</h1>
+                <h4>Several open-source alternatives were created to showcase the solutions:</h4>
+            </p>
+            {% assign proposed_map = site.maps | where:"type","proposed" %}
+            {% for map in proposed_map limit:3 %}
+                {% include map_list.html %}
+            {% endfor %}
+
+            <a href="{{ site.baseurl }}/proposed" role="button" class="btn btn-info btn-lg">See all proposed maps</a>
+
+        </div>
+    </div>
+</div>

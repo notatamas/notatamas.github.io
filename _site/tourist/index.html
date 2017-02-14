@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+
+    <title>Tourist map - FOSS IoW Council</title>
+
+    <link rel="canonical" href="http://localhost:4000/tourist/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS fo the Clean blog theme -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/custom.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="FOSS IoW Council" />
+
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FOSS IoW Council</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+				
+                <li>
+                    <a href="/current/">Current maps</a>
+                </li>
+				
+                
+				
+                <li>
+                    <a href="/proposed/">Proposed maps</a>
+                </li>
+				
+                
+				
+                <li>
+                    <a href="/tourist/">Tourist map</a>
+                </li>
+				
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+  <!--  </div> -->
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/iow_header.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Tourist map</h1>
+                    <hr class="small">
+                    <span class="subheading">Simplified tourist information of the Isle of Wight</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+
+			<div class="container">
+    <div class="row">
+
+      <h1>Interactive image map of the attractions in the Isle of Wight</h1>
+      <p>
+        Hover above the marked areas to show the name of the attraction.
+        Click on the area for additional information.
+      </p>
+
+      <ul class="list-group">
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info1"><b>Parkhurst forest</b> |
+          <small>  Parkhurst forest is good for a small stroll into where the red squirrel hide is ... </small></a>
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info2"><b>Ventnor Park</b> |
+          <small>  Ventnor Park is situated in a Westerly direction of Ventnor and runs alongside the A3055 ... </small></a>
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info3"><b>St Catherine's Lighthouse</b> |
+          <small>  St Catherine's Lighthouse is situated in Niton Undercliffe, 5 miles from Ventnor and was built ... </small></a>
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info4"><b>St Catherine's Oratory</b> |
+          <small>  This early lighthouse is known locally as "The Pepperpot" and was constructed in 1328. </small></a>
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info5"><b>Luccombe Chine</b> |
+          <small>  It is a very quiet and picturesque place, with plenty of wild plants and trees. ... </small></a>
+        
+        <a href="#"  class="list-group-item" data-toggle="modal" data-target="#info6"><b>Bembridge</b> |
+          <small>  There is a very pleasant short circular walk which incorporates the beach area shown in ... </small></a>
+        
+      </ul>
+
+<img src="/img/iow_map.jpg" alt="Tourist map" usemap="#touristmap">
+
+<map name="touristmap">
+  
+    <area shape="poly" coords="593,201,625,206,597,174,580,175,577,183,546,172,550,198,562,225,561,234,565,238,570,259,636,250,614,243,601,215" alt="Sun" data-toggle="modal" data-target="#info1" data-toggle="tooltip" title="Parkhurst forest">
+  
+    <area shape="poly" coords="893,657,861,637,819,646,803,676,804,704,847,714,888,709,903,682" alt="Sun" data-toggle="modal" data-target="#info2" data-toggle="tooltip" title="Ventnor Park">
+  
+    <area shape="circle" coords="665,729,52" alt="Sun" data-toggle="modal" data-target="#info3" data-toggle="tooltip" title="St Catherine's Lighthouse">
+  
+    <area shape="circle" coords="650,666,32" alt="Sun" data-toggle="modal" data-target="#info4" data-toggle="tooltip" title="St Catherine's Oratory">
+  
+    <area shape="circle" coords="940,600,37" alt="Sun" data-toggle="modal" data-target="#info5" data-toggle="tooltip" title="Luccombe Chine">
+  
+    <area shape="rect" coords="1104,252,1197,404" alt="Sun" data-toggle="modal" data-target="#info6" data-toggle="tooltip" title="Bembridge">
+  
+</map>
+
+  
+<div id="info1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Parkhurst forest</h4>
+      </div>
+      <div class="modal-body">
+        
+           <p>Parkhurst forest is good for a small stroll into where the red squirrel hide is or can become a larger walk if required.
+The above picture shows what the forest is like when you wander deliberately off the footpath on a fine bright day,
+ it is quite dark and very quiet inside making it quite easy to get lost.
+ <a href="http://www.isleofwightattractions.co.uk/ParkhurstForest.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/ParkhurstForest.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/parkhust.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<div id="info2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Ventnor Park</h4>
+      </div>
+      <div class="modal-body">
+        
+           <p>Ventnor Park is situated in a Westerly direction of Ventnor and runs alongside the A3055 road towards St. Lawrence.
+It is not a particularly large park but it is well maintained and has a stream with a few stepping stones running through it.
+At the start of the park there is a putting green with ice cream and refreshments which is normally open into the evenings during peak season.
+Near Park Lodge there is a small bird aviary and not too far away is Ventnor Park's Bandstand which originally belonged to Ventnor's Pier and has been in the park since 1903.
+ <a href="http://www.isleofwightattractions.co.uk/VentnorPark.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/VentnorPark.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/ventor.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<div id="info3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">St Catherine's Lighthouse</h4>
+      </div>
+      <div class="modal-body">
+        <b>St Catherine's Lighthouse is situated in Niton Undercliffe, 5 miles from Ventnor and was built in 1838 following the loss of The Clarendon ship on rocks near to the present location.</b>
+           <p>It has 94 steep steps up to the lantern and the height of the tower now is 27 metres.
+It was 13 meters higher but due to problems with mist capping the lighthouse it was decided to lower the top tower by 7 meters and the middle tower by 6 meters in 1875.
+An accident took place at the station during the Second World War, on 1st June 1943.
+A bomb landed directly on the engine house killing the three keepers who were on duty and had taken shelter there.
+Their last log can be seen in the log book on show in the lighthouse and a sixty year old Union Jack flag is still displayed on a wall opposite as a mark of respect.
+ <a href="http://www.isleofwightattractions.co.uk/StCatherinesLighthouse.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/StCatherinesLighthouse.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/StCatherinesLighthouse.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<div id="info4" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">St Catherine's Oratory</h4>
+      </div>
+      <div class="modal-body">
+        <b>This early lighthouse is known locally as "The Pepperpot" and was constructed in 1328.</b>
+           <p>According to local legend Walter De Godeton took wine washed ashore from a shipwreck in Chale Bay.
+The wine came from a French monastery and he was soon found out, he was fined and threatened with excommunication from the church unless he built an Oratory and beacon as a penance for his sins.
+It stands on one of the highest hills of The Island.
+The Beacon continued to be used to warn ships right up to the 17 Century however it was not very effective due to cloud and hill fog so ships continued to be shipwrecked -
+so a new lighthouse was built which is now at St Catherine's and is still operational.
+ <a href="http://www.isleofwightattractions.co.uk/StCatherinesLighthouse.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/StCatherinesLighthouse.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/StCatherinesOratorysideView.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<div id="info5" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Luccombe Chine</h4>
+      </div>
+      <div class="modal-body">
+        <b>It is a very quiet and picturesque place, with plenty of wild plants and trees.</b>
+           <p>Luccombe Chine area is situated between Shanklin Old Village and Bonchurch,
+however the main road {A3055} which links the two does not go near to Luccombe and the only lane to Luccombe is now Private and not for public use.
+There is just a handful of houses, one Hotel and a farm but it does have its own beach and Luccombe is considerably lower than the main road therefore it is easily missed if driving by.
+ <a href="http://www.isleofwightattractions.co.uk/LuccombeWalk.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/LuccombeWalk.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/LuccombeChineW.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+<div id="info6" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Bembridge</h4>
+      </div>
+      <div class="modal-body">
+        
+           <p>There is a very pleasant short circular walk which incorporates the beach area shown in these pages and then follows a coastal path back past the Crab and Lobster Inn to the mentioned car park nearby.
+ <a href="http://www.isleofwightattractions.co.uk/Bembridge4.htm">(Source)</a> </p>
+           <p><a href="http://www.isleofwightattractions.co.uk/Bembridge4.htm">More info</a></p> 
+           <p> <img class="img-map" src="/img/BembridgeHotel.jpg" alt="test" width="1200px" height="768px" />  </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+  
+</div>
+</div>
+
+
+
+    <!-- Footer -->
+<hr />
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    <li>
+                        <a href="https://twitter.com/tomas_antal">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/notatamas/notatamas.github.io">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                  <p class="copyright">Created with the <a href="https://jekyllrb.com/">Jekyll</a> static site generator,
+                     written in the <a href="https://www.ruby-lang.org/en/">Ruby</a> programming language.
+                     The site generation is implemented in the <a href="http://shopify.github.io/liquid/">Liquid</a> template language.
+                      Hosted on <a href="https://pages.github.com/">Github Pages</a>,
+                      the layout is based on <a href="http://getbootstrap.com/">Bootstrap</a>
+                      and <a href="https://jquery.com/">jQuery</a>
+                      and inspired by the <a href="https://startbootstrap.com/template-overviews/clean-blog/">Clean blog</a> Bootstrap theme
+                      by <a href="http://davidmiller.io/">David Miller</a>.</p>
+                <p class="copyright text-muted">Copyright &copy; Tomás Antal 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>
