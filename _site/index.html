@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+    <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
     <title>FOSS IoW Council</title>
 
@@ -23,6 +23,16 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+    <!-- LeafletJS JS -->
+     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+     <!-- jQuery -->
+     <script src="/js/leaflet-providers.js "></script>
+     <script src="/js/leaflet.ajax.min.js "></script>
+     <script src="/js/leaflet.migrationLayer.js "></script>
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -248,9 +258,18 @@
             
                 <div class="col-sm-4">
     <div class="thumbnail">
-        <a href="/maps/proposed_rain/"><img src="/img/small_map1.jpg" alt="Proposed rain map"></a>
-        <p><strong><a href="/maps/proposed_rain/">Proposed rain map</a></strong> </br>
+        <a href="/maps/proposed_city/"><img src="/img/small_map1.jpg" alt="Proposed city map"></a>
+        <p><strong><a href="/maps/proposed_city/">Proposed city map</a></strong> </br>
             Proposed rain mapping implemented in ArcGIS</p>
+    </div>
+</div>
+
+            
+                <div class="col-sm-4">
+    <div class="thumbnail">
+        <a href="/maps/proposed_marine/"><img src="/img/iow_bedr.jpg" alt="Proposed marine map"></a>
+        <p><strong><a href="/maps/proposed_marine/">Proposed marine map</a></strong> </br>
+            Proposed marine mapping implemented in LeafletJS</p>
     </div>
 </div>
 
@@ -260,15 +279,6 @@
         <a href="/maps/proposed_road_town/"><img src="/img/small_map1.jpg" alt="Proposed road and town map"></a>
         <p><strong><a href="/maps/proposed_road_town/">Proposed road and town map</a></strong> </br>
             Proposed road and town map implemented in ArcGIS</p>
-    </div>
-</div>
-
-            
-                <div class="col-sm-4">
-    <div class="thumbnail">
-        <a href="/maps/proposed_soil/"><img src="/img/small_map1.jpg" alt="Proposed soil map"></a>
-        <p><strong><a href="/maps/proposed_soil/">Proposed soil map</a></strong> </br>
-            Proposed web mapping implemented in ArcGIS</p>
     </div>
 </div>
 

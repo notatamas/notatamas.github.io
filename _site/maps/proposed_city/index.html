@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+    <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Proposed rain map - FOSS IoW Council</title>
+    <title>Proposed city map - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/maps/proposed_rain/">
+    <link rel="canonical" href="http://localhost:4000/maps/proposed_city/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -23,6 +23,16 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+    <!-- LeafletJS JS -->
+     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+     <!-- jQuery -->
+     <script src="/js/leaflet-providers.js "></script>
+     <script src="/js/leaflet.ajax.min.js "></script>
+     <script src="/js/leaflet.migrationLayer.js "></script>
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -97,7 +107,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Proposed rain map</h1>
+                    <h1>Proposed city map</h1>
                     <hr class="small">
                     <span class="subheading">Proposed rain mapping implemented in ArcGIS</span>
                 </div>
@@ -112,21 +122,28 @@
     <div class="col-sm-8">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Proposed rain map</h1>
+          <h1>Proposed city map</h1>
         </p>
 
-        <div id="map" style="height:600px;width:100%;"></div>
+        <h2> Get to the Isle of Wight with ferry or plane</h2>
+
+
+<script src="/js/leaflet-heat.js"></script>
+<style>
+#mapid { height: 800px; }
+</style>
+
+<div id="mapid"></div>
 <script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
+var mymap = L.map('mapid').setView([50.75, -1.2], 11);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q').addTo(mymap);
+
+var heat = L.heatLayer([
+    [-1.3582, 50.9500, 0.2], // lat, lng, intensity
+    [-1.1108,50.67801, 0.5]
+], {radius: 25}).addTo(mymap);
+
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"
-async defer></script>
 
       </div>
     </div>

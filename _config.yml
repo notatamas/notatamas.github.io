@@ -29,7 +29,8 @@ defaults:
     values:
       layout: ossbenefit
 
-
+mapboxjs: v2.4.0
+leafletjs: v0.4.0
 
 # Build settings
 markdown: kramdown

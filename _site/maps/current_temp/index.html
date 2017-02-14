@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+    <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
     <title>Current temp map - FOSS IoW Council</title>
 
@@ -23,6 +23,16 @@
 
     <!-- Pygments Github CSS -->
     <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+    <!-- LeafletJS JS -->
+     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+     <!-- jQuery -->
+     <script src="/js/leaflet-providers.js "></script>
+     <script src="/js/leaflet.ajax.min.js "></script>
+     <script src="/js/leaflet.migrationLayer.js "></script>
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -115,18 +125,87 @@
           <h1>Current temp map</h1>
         </p>
 
-        <div id="map" style="height:400px;width:100%;"></div>
+        <h4>LeafletJS with Mapbox API</h4>
+
+<script src="/js/leaflet.migrationLayer.js"></script>
+
+<style>
+#mapid { height: 600px; }
+</style>
+
+<div id="mapid"></div>
 <script>
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q').addTo(mymap);
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
+
+var data = [{"from":[-118.2705,33.9984],"to":[-122.789336,37.920458],"labels":["Los Angeles","San Francisco"],"color":"#ff3a31"}]
+
+var migrationLayer = new L.migrationLayer({
+    map: mymap,
+    data: data
+})
+
+migrationLayer.show();
+migrationLayer.play();
+
+
+var states = [{
+    "type": "Feature",
+    "properties": {"party": "Republican"},
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+            [-1.23, 50.63],
+            [-1.29, 50.68],
+            [-1.27, 50.69],
+            [-1.25, 50.67],
+            [-1.3, 50.61],
+        ]]
+    }
+}, {
+    "type": "Feature",
+    "properties": {"party": "Democrat"},
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+            [-109.05, 41.00],
+            [-102.06, 40.99],
+            [-102.03, 36.99],
+            [-109.04, 36.99],
+            [-109.05, 41.00]
+        ]]
+    }
+}];
+
+L.geoJSON(states, {
+    style: function(feature) {
+        switch (feature.properties.party) {
+            case 'Republican': return {color: "#ff0000"};
+            case 'Democrat':   return {color: "#0000ff"};
+        }
+    }
+}).addTo(mymap);
+
+
+var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(mymap);
+var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+]).addTo(mymap);
+var popup = L.popup()
+    .setLatLng([51.5, -0.09])
+    .setContent("I am a standalone popup.")
+    .openOn(mymap);
+    circle.bindPopup("I am a circle.");
+    polygon.bindPopup("I am a polygon.");
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"
-async defer></script>
 
       </div>
     </div>
