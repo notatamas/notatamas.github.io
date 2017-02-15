@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Current maps - FOSS IoW Council</title>
+    <title>Proposed flood risk map - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/current/">
+    <link rel="canonical" href="http://localhost:4000/maps/proposed_flood/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,85 +108,92 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Current maps</h1>
+                    <h1>Proposed flood risk map</h1>
                     <hr class="small">
-                    <span class="subheading">Overview of the current GIS solutions used by the Isle of Wight Council</span>
+                    <span class="subheading">Flood risk map mapping in OpenLeayers and Bing Maps</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-
-<div class="row bg-grey">
+<!-- The content of each map -->
+<div class="row">
   <div class="col-sm-2"> </div>
     <div class="col-sm-8">
-
       <div class="container-fluid text-center ">
         <p>
-          <h1> The list of current maps</h1>
-          The current maps are implemented using propietary software, mainly with the ESRI ArcGIS ecosystem. 
+          <h1>Proposed flood risk map</h1>
         </p>
 
-        
+        <script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<ul class="list-group list-hover-text">
+<li class="list-group-item"><div id="info"></div></li>
+</ul>
+<div id="map" class="map" style="height: 700px"></div>
 
-    <div class="col-sm-4">
-    <div class="thumbnail">
-        <a href="/maps/curent_road_town/"><img src="/img/current_iow_soil.png" alt="Current road and town map"></a>
-        <p><strong><a href="/maps/curent_road_town/">Current road and town map</a></strong> </br>
-            Current road and town map implemented in ArcGIS</p>
-    </div>
-</div>
+<script>
+      var hoverText = "Please hover above the flood area to assess the risk level!";
+      document.getElementById('info').innerHTML = hoverText;
 
+      var projection = ol.proj.get('EPSG:3857');
 
+      var raster = new ol.layer.Tile({
+        source: new ol.source.BingMaps({
+          imagerySet: 'Aerial',
+          key: 'px7uRjWF9wUwSGulOggC~kxnRiJcaW8DeaTEjTfwyUQ~AlvtEnBfPvJtKWZyjVPVYIiFrk9h_vgZpY_5vk5fVN6lZIujC2bm6fgt6F6Bg8G3'
+        })
+      });
 
+      var vector = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: '/kml/flood.kml ',
+          format: new ol.format.KML()
+        })
+      });
+      vector.setOpacity(0.4);
 
-    <div class="col-sm-4">
-    <div class="thumbnail">
-        <a href="/maps/current_rain/"><img src="/img/current_iow_soil.png" alt="Current rain map"></a>
-        <p><strong><a href="/maps/current_rain/">Current rain map</a></strong> </br>
-            Current rain mapping implemented in ArcGIS</p>
-    </div>
-</div>
+      var map = new ol.Map({
+        layers: [raster, vector],
+        target: document.getElementById('map'),
+        view: new ol.View({
+          center: [-144048.29581448957, 6563375.219131528],
+          projection: projection,
+          zoom: 11
+        })
+      });
 
+      var displayFeatureInfo = function(pixel) {
+        var features = [];
+        map.forEachFeatureAtPixel(pixel, function(feature) {
+          features.push(feature);
+        });
+        if (features.length > 0) {
+          var info = [];
+          var i, ii;
+          for (i = 0, ii = features.length; i < ii; ++i) {
+            info.push(features[i].get('name'));
+          }
+          document.getElementById('info').innerHTML = info.join(', ') || '(unknown)';
+          map.getTarget().style.cursor = 'pointer';
+        } else {
+          document.getElementById('info').innerHTML = hoverText;
+          map.getTarget().style.cursor = '';
+        }
+      };
 
+      map.on('pointermove', function(evt) {
+        if (evt.dragging) {
+          return;
+        }
+        var pixel = map.getEventPixel(evt.originalEvent);
+        displayFeatureInfo(pixel);
+      });
 
-
-    <div class="col-sm-4">
-    <div class="thumbnail">
-        <a href="/maps/current_soil/"><img src="/img/current_iow_soil.png" alt="Current soil map"></a>
-        <p><strong><a href="/maps/current_soil/">Current soil map</a></strong> </br>
-            Current web mapping implemented in ArcGIS</p>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4">
-    <div class="thumbnail">
-        <a href="/maps/current_temp/"><img src="/img/current_iow_soil.png" alt="Current temp map"></a>
-        <p><strong><a href="/maps/current_temp/">Current temp map</a></strong> </br>
-            Current temp mapping implemented in ArcGIS</p>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      map.on('click', function(evt) {
+        displayFeatureInfo(evt.pixel);
+      });
+    </script>
 
       </div>
     </div>
