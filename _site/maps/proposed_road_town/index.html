@@ -154,7 +154,33 @@
       }
 
 
+      var layers = [];
+      layers[0] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/a_road.kml',
+        map: map
+      });
+      layers[1] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/b_road.kml',
+        map: map
+      });
+      layers[2] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/outline.kml',
+        map: map
+      });
+
+
+      loadKmlLayer(layers, map);
+
     }
+
+    /**
+ * Adds a KMLLayer based on the URL passed.
+ */
+function loadKmlLayer(layers, map) {
+  var kmlLayer = new google.maps.KmlLayer(layers, {
+    preserveViewport: false,
+    map: map});
+}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"
     async defer></script>

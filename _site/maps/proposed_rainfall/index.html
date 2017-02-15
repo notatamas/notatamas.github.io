@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Proposed city map - FOSS IoW Council</title>
+    <title>Proposed rainfall map - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/maps/proposed_city/">
+    <link rel="canonical" href="http://localhost:4000/maps/proposed_rainfall/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,9 +108,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Proposed city map</h1>
+                    <h1>Proposed rainfall map</h1>
                     <hr class="small">
-                    <span class="subheading">Proposed rain mapping implemented in ArcGIS</span>
+                    <span class="subheading">Rainfall in OpenLeayers and Bing Maps</span>
                 </div>
             </div>
         </div>
@@ -123,28 +123,77 @@
     <div class="col-sm-8">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Proposed city map</h1>
+          <h1>Proposed rainfall map</h1>
         </p>
 
-        <h2> Get to the Isle of Wight with ferry or plane</h2>
+        <script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
+<ul class="list-group list-hover-text">
+<li class="list-group-item"><div id="info"></div></li>
+</ul>
+<div id="map" class="map" style="height: 800px"></div>
 
-
-<script src="/js/leaflet-heat.js"></script>
-<style>
-#mapid { height: 800px; }
-</style>
-
-<div id="mapid"></div>
 <script>
-var mymap = L.map('mapid').setView([50.75, -1.2], 11);
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q').addTo(mymap);
+      var hoverText = "Please hover above area to assess the rainfall level!";
+      document.getElementById('info').innerHTML = hoverText;
 
-var heat = L.heatLayer([
-    [-1.3582, 50.9500, 0.2], // lat, lng, intensity
-    [-1.1108,50.67801, 0.5]
-], {radius: 25}).addTo(mymap);
+      var projection = ol.proj.get('EPSG:3857');
 
-</script>
+      var raster = new ol.layer.Tile({
+        source: new ol.source.BingMaps({
+          imagerySet: 'Aerial',
+          key: 'px7uRjWF9wUwSGulOggC~kxnRiJcaW8DeaTEjTfwyUQ~AlvtEnBfPvJtKWZyjVPVYIiFrk9h_vgZpY_5vk5fVN6lZIujC2bm6fgt6F6Bg8G3'
+        })
+      });
+
+      var vector = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: '/kml/rainfall.kml ',
+          format: new ol.format.KML()
+        })
+      });
+      vector.setOpacity(0.4);
+
+      var map = new ol.Map({
+        layers: [raster, vector],
+        target: document.getElementById('map'),
+        view: new ol.View({
+          center: [-144048.29581448957, 6563375.219131528],
+          projection: projection,
+          zoom: 11
+        })
+      });
+
+      var displayFeatureInfo = function(pixel) {
+        var features = [];
+        map.forEachFeatureAtPixel(pixel, function(feature) {
+          features.push(feature);
+        });
+        if (features.length > 0) {
+          var info = [];
+          var i, ii;
+          for (i = 0, ii = features.length; i < ii; ++i) {
+            info.push(features[i].get('name'));
+          }
+          document.getElementById('info').innerHTML = info.join(', ') || '(unknown)';
+          map.getTarget().style.cursor = 'pointer';
+        } else {
+          document.getElementById('info').innerHTML = hoverText;
+          map.getTarget().style.cursor = '';
+        }
+      };
+
+      map.on('pointermove', function(evt) {
+        if (evt.dragging) {
+          return;
+        }
+        var pixel = map.getEventPixel(evt.originalEvent);
+        displayFeatureInfo(pixel);
+      });
+
+      map.on('click', function(evt) {
+        displayFeatureInfo(evt.pixel);
+      });
+    </script>
 
       </div>
     </div>

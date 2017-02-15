@@ -1,7 +1,7 @@
 ---
 title: Proposed road and town map
 description: Proposed road and town map implemented in ArcGIS
-img: small_map1.jpg
+img: prop_road_town.jpg
 layout: map
 type: proposed
 ---
@@ -34,7 +34,33 @@ type: proposed
       }
 
 
+      var layers = [];
+      layers[0] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/a_road.kml',
+        map: map
+      });
+      layers[1] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/b_road.kml',
+        map: map
+      });
+      layers[2] = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/outline.kml',
+        map: map
+      });
+
+
+      loadKmlLayer(layers, map);
+
     }
+
+    /**
+ * Adds a KMLLayer based on the URL passed.
+ */
+function loadKmlLayer(layers, map) {
+  var kmlLayer = new google.maps.KmlLayer(layers, {
+    preserveViewport: false,
+    map: map});
+}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ site.gm_api_key }}&callback=initMap"
     async defer></script>
