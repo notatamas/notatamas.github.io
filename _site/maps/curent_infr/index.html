@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Current maps - FOSS IoW Council</title>
+    <title>Current infrastructure - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/current/">
+    <link rel="canonical" href="http://localhost:4000/maps/curent_infr/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,121 +108,80 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Current maps</h1>
+                    <h1>Current infrastructure</h1>
                     <hr class="small">
-                    <span class="subheading">Overview of the current GIS solutions used by the Isle of Wight Council</span>
+                    <span class="subheading">Current infrastructure in high risk areas.</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-
-<div class="row bg-grey">
+<!-- The content of each map -->
+<div class="row">
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
+        <p>
+          <h1>Current infrastructure</h1>
+        </p>
+        <div id="mapDiv" style="height:600px;"></div>
 
-        
+<link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css"/>
+    <style>
+      html, body, #mapDiv{
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+    </style>
+    <script src="https://js.arcgis.com/3.19/"></script>
+    <script>
+      var map;
 
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/curent_infr/"><img src="/img/curr_town.jpg" alt="Current infrastructure"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/curent_infr/">Current infrastructure</a></strong> </br></p>
-        </div>
-    </div>
-</div>
+      require([
+        "esri/map",
+        "esri/layers/ArcGISDynamicMapServiceLayer",
+        "esri/layers/ImageParameters"
+      ], function (
+        Map, ArcGISDynamicMapServiceLayer, ImageParameters) {
 
+        map = new Map("mapDiv", {
+          basemap: "streets",
+          center: [-1.3, 50.65],
+          zoom: 11,
+          sliderOrientation : "horizontal"
+        });
 
+        var imageParameters = new ImageParameters();
+        imageParameters.format = "jpeg"; //set the image type to PNG24, note default is PNG8.
 
+        //Takes a URL to a non cached map service.
+        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/MyMapService/MapServer", {
+          "opacity" : 0.8,
+          "imageParameters" : imageParameters
+        });
 
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/curent_road_town/"><img src="/img/curr_town.jpg" alt="Current road and town map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/curent_road_town/">Current road and town map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_flood/"><img src="/img/curr_flood.jpg" alt="Current flood map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/current_flood/">Current flood map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_rain/"><img src="/img/curr_town.jpg" alt="Current rain map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/current_rain/">Current rain map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_risk/"><img src="/img/curr_soil.jpg" alt="Current infrastructure"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/current_risk/">Current infrastructure</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_soil/"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/current_soil/">Current soil map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_temp/"><img src="/img/curr_town.jpg" alt="Current temp map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/current_temp/">Current temp map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        map.addLayer(dynamicMapServiceLayer);
+      });
+    </script>
 
       </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+      <p></p>
+      <ul class="list-group row">
+           <li class="list-group-item col-xs-12 text-center">Map information</li>
+           <li class="list-group-item col-xs-4">Application:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS JS API</li>
+           <li class="list-group-item col-xs-4">Base map:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS Online</li>
+           <li class="list-group-item col-xs-4">Layer(s):</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI Server</li>
+      </ul>
     </div>
 </div>
 

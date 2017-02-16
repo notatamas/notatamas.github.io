@@ -1,0 +1,52 @@
+---
+title: Current infrastructure
+description: Current infrastructure in high risk areas.
+img: curr_town.jpg
+layout: map
+type: current
+application: ArcGIS JS API
+base_layer: ArcGIS Online
+layer: ESRI Server
+purpose: Showecase the infrastructure with high risk.
+---
+
+<div id="mapDiv" style="height:600px;"></div>
+
+<link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css"/>
+    <style>
+      html, body, #mapDiv{
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+    </style>
+    <script src="https://js.arcgis.com/3.19/"></script>
+    <script>
+      var map;
+
+      require([
+        "esri/map",
+        "esri/layers/ArcGISDynamicMapServiceLayer",
+        "esri/layers/ImageParameters"
+      ], function (
+        Map, ArcGISDynamicMapServiceLayer, ImageParameters) {
+
+        map = new Map("mapDiv", {
+          basemap: "streets",
+          center: [-1.3, 50.65],
+          zoom: 11,
+          sliderOrientation : "horizontal"
+        });
+
+        var imageParameters = new ImageParameters();
+        imageParameters.format = "jpeg"; //set the image type to PNG24, note default is PNG8.
+
+        //Takes a URL to a non cached map service.
+        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/MyMapService/MapServer", {
+          "opacity" : 0.8,
+          "imageParameters" : imageParameters
+        });
+
+        map.addLayer(dynamicMapServiceLayer);
+      });
+    </script>
