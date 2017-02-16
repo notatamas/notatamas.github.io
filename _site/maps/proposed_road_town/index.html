@@ -103,7 +103,7 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/iow_header.jpg')">
+<header class="intro-header" style="background-image: url('/img/iow_header2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -119,13 +119,11 @@
 
 <!-- The content of each map -->
 <div class="row">
-  <div class="col-sm-2"> </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
           <h1>Proposed road and town map</h1>
         </p>
-
         <div id="map" style="height:800px;width:100%;"></div>
     <script>
       var markers = [{"latitude":"50.761838","longitude":"-1.2978347","name":"Cowes","population":"16278"},{"latitude":"50.701712","longitude":"-1.2888204","name":"Newport","population":"20324"},{"latitude":"50.729436","longitude":"-1.1577647","name":"Ryde","population":"19843"},{"latitude":"50.685672","longitude":"-1.0787102","name":"Bembridge","population":"3452"},{"latitude":"50.679306","longitude":"-1.1399791","name":"Brading","population":"2071"},{"latitude":"50.758148","longitude":"-1.2825783","name":"East Cowes","population":"209"},{"latitude":"50.654764","longitude":"-1.1534418","name":"Sandown","population":"4813"},{"latitude":"50.628104","longitude":"-1.1728659","name":"Shanklin","population":"8140"},{"latitude":"50.685663","longitude":"-1.5291400","name":"Totland","population":"2316"},{"latitude":"50.595948","longitude":"-1.2042300","name":"Ventnor","population":"6458"}];
@@ -187,7 +185,22 @@ function loadKmlLayer(layers, map) {
 
       </div>
     </div>
-  <div class="col-sm-2"> </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+      <p></p>
+      <ul class="list-group row">
+           <li class="list-group-item col-xs-12 text-center">Map information</li>
+           <li class="list-group-item col-xs-4">Application:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Google Maps</li>
+           <li class="list-group-item col-xs-4">Base map:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Google Maps</li>
+           <li class="list-group-item col-xs-4">Layer(s):</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML</li>
+      </ul>
+    </div>
 </div>
 
 

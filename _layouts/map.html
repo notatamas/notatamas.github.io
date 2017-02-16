@@ -19,15 +19,28 @@ layout: default
 
 <!-- The content of each map -->
 <div class="row">
-  <div class="col-sm-2"> </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
           <h1>{{ page.title }}</h1>
         </p>
-
         {{ content }}
       </div>
     </div>
-  <div class="col-sm-2"> </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+      <p></p>
+      <ul class="list-group row">
+           <li class="list-group-item col-xs-12 text-center">Map information</li>
+           <li class="list-group-item col-xs-4">Application:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">{{ page.application }}</li>
+           <li class="list-group-item col-xs-4">Base map:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">{{ page.base_layer }}</li>
+           <li class="list-group-item col-xs-4">Layer(s):</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">{{ page.layer }}</li>
+      </ul>
+    </div>
 </div>

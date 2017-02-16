@@ -1,7 +1,8 @@
-<div class="col-sm-4">
-    <div class="thumbnail">
+<div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
         <a href="{{ map.url }}"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
-        <p><strong><a href="{{ map.url }}">{{ map.title }}</a></strong> </br>
-            {{ map.description }}</p>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="{{ map.url }}">{{ map.title }}</a></strong> </br></p>
+        </div>
     </div>
 </div>
