@@ -1,0 +1,23 @@
+---
+title: Proposed exposed
+description: areas with high wind exposure in LeafletJS and WMS.
+img: iow_bedr.jpg
+layout: map
+type: proposed
+application: LeafletJS
+base_layer: MapBox
+layer: WMS
+purpose: Show the areas with high wind exposure.
+---
+
+<div id="mapid" style="height: 800px"></div>
+<script>
+var mymap = L.map('mapid').setView([50.7, -1.3], 11);
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q').addTo(mymap);
+
+var wmsLayer = L.tileLayer.wms('http://ccstumap-1.central.cranfield.ac.uk:8080/geoserver/s260484/wms',
+{ layers: "	s260484:veryExposedArea",
+  format: 'image/png',
+  transparent: true,}).addTo(mymap);
+
+</script>
