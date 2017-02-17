@@ -1,7 +1,7 @@
 ---
-title: Proposed flood and woodland map
+title: Flood and woodland map
 description: Ferry and plane transport in LeafletJS
-img: iow_trans.jpg
+img: flood_wood.jpg
 layout: map
 type: proposed
 application: OpenLayer
@@ -67,26 +67,25 @@ style: new ol.style.Style({
         view: new ol.View({
           center: [-144048.29581448957, 6563375.219131528],
           projection: projection,
-         zoom: 10
+          zoom: 10
         })
       });
 
 
 function increaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
-console.log(ol.Color());
 	if (layer.getOpacity()<0.91) {
-		layer.setOpacity(layer.getOpacity() + 0.1); 
+		layer.setOpacity(layer.getOpacity() + 0.1);
 console.log(layer.getOpacity());
-} 
+}
 }
 
 function decreaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
 	if (layer.getOpacity()>0.09) {
-		layer.setOpacity(layer.getOpacity() - 0.1); 
+		layer.setOpacity(layer.getOpacity() - 0.1);
 console.log(layer.getOpacity());
-} 
+}
 }
 
     </script>

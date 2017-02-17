@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Current infrastructure - FOSS IoW Council</title>
+    <title>Unskilled population - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/maps/curent_infr/">
+    <link rel="canonical" href="http://localhost:4000/maps/current_unskilled_pop/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,9 +108,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Current infrastructure</h1>
+                    <h1>Unskilled population</h1>
                     <hr class="small">
-                    <span class="subheading">Current infrastructure in high risk areas.</span>
+                    <span class="subheading">Rate of unskilled and unemployed population</span>
                 </div>
             </div>
         </div>
@@ -122,7 +122,7 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Current infrastructure</h1>
+          <h1>Unskilled population</h1>
         </p>
         <div class="alert alert-warning alert-dismissable fade in">
 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -152,7 +152,10 @@
 </div>
 
 
-<div id="mapDiv" style="height:600px;"></div>
+<div id="mapDiv" style="height:800px;"></div>
+<p class="text-left"> Rate of unskilled and unemployed population </p>
+<img src="/img/unemploy_legend.png">
+
 
 <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css"/>
     <style>
@@ -184,7 +187,7 @@
         imageParameters.format = "jpeg"; //set the image type to PNG24, note default is PNG8.
 
         //Takes a URL to a non cached map service.
-        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/MyMapService/MapServer", {
+        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/UnemployIOW/MapServer", {
           "opacity" : 0.8,
           "imageParameters" : imageParameters
         });
@@ -206,7 +209,7 @@
            <li class="list-group-item col-xs-4">Application:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS JS API</li>
            <li class="list-group-item col-xs-4">Base map:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS Online</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI Server</li>
       </ul>

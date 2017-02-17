@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Proposed NSRI - FOSS IoW Council</title>
+    <title>Flood and woodland map - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/maps/proposed_nsri/">
+    <link rel="canonical" href="http://localhost:4000/maps/proposed_flood_woodland/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,9 +108,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Proposed NSRI</h1>
+                    <h1>Flood and woodland map</h1>
                     <hr class="small">
-                    <span class="subheading">Flood risk map mapping in OpenLeayers and Bing Maps</span>
+                    <span class="subheading">Ferry and plane transport in LeafletJS</span>
                 </div>
             </div>
         </div>
@@ -122,25 +122,88 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Proposed NSRI</h1>
+          <h1>Flood and woodland map</h1>
         </p>
-        <div id="map" style="height:800px;width:100%;"></div>
-<script>
+            <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
 
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: {lat: -28, lng: 137}
-    });
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
+<strong>Woodland opacity:</strong>
+<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(vector);">+</button>
+<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(vector);">-</button>
+<strong>Flood area opacity:</strong>
+<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(flood);">+</button>
+<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(flood);">-</button>
+</div>
+</div>
 
-    // NOTE: This uses cross-domain XHR, and may not work on older browsers.
-    map.data.loadGeoJson(
-        'http://public.cranfield.ac.uk/s260484/layertest.json');
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"
-async defer></script>
+    <div id="map" class="map"></div>
+    <div id="info">&nbsp;</div>
+    <script>
+
+
+
+
+      var projection = ol.proj.get('EPSG:3857');
+
+      var raster = new ol.layer.Tile({
+        source: new ol.source.BingMaps({
+          imagerySet: 'Aerial',
+          key: 'px7uRjWF9wUwSGulOggC~kxnRiJcaW8DeaTEjTfwyUQ~AlvtEnBfPvJtKWZyjVPVYIiFrk9h_vgZpY_5vk5fVN6lZIujC2bm6fgt6F6Bg8G3'
+        })
+      });
+
+
+
+      var vector = new ol.layer.Vector({
+style: new ol.style.Style({
+            stroke: new ol.style.Stroke({color: 'red', width: 2})}),
+        source: new ol.source.Vector({
+          url: '/kml/woodland.kml ',
+          format: new ol.format.KML()
+        })
+      });
+
+      var flood = new ol.layer.Vector({
+        source: new ol.source.Vector({
+          url: '/kml/flood.kml ',
+          format: new ol.format.KML()
+        })
+      });
+
+	vector.setVisible(true);
+
+      var map = new ol.Map({
+        layers: [raster, vector, flood],
+        target: document.getElementById('map'),
+        view: new ol.View({
+          center: [-144048.29581448957, 6563375.219131528],
+          projection: projection,
+          zoom: 10
+        })
+      });
+
+
+function increaseLayerOpacity(layer) {
+console.log(layer.getOpacity());
+	if (layer.getOpacity()<0.91) {
+		layer.setOpacity(layer.getOpacity() + 0.1);
+console.log(layer.getOpacity());
+}
+}
+
+function decreaseLayerOpacity(layer) {
+console.log(layer.getOpacity());
+	if (layer.getOpacity()>0.09) {
+		layer.setOpacity(layer.getOpacity() - 0.1);
+console.log(layer.getOpacity());
+}
+}
+
+    </script>
 
       </div>
     </div>
@@ -153,7 +216,7 @@ async defer></script>
       <ul class="list-group row">
            <li class="list-group-item col-xs-12 text-center">Map information</li>
            <li class="list-group-item col-xs-4">Application:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">OpenLayers</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">OpenLayer</li>
            <li class="list-group-item col-xs-4">Base map:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Bing Maps</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>

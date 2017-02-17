@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Proposed Electricity infrastructure - FOSS IoW Council</title>
+    <title>Electricity infrastructure map - FOSS IoW Council</title>
 
     <link rel="canonical" href="http://localhost:4000/maps/proposed_mastpylon/">
 
@@ -108,7 +108,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Proposed Electricity infrastructure</h1>
+                    <h1>Electricity infrastructure map</h1>
                     <hr class="small">
                     <span class="subheading">Proposed web mapping implemented in Google Maps</span>
                 </div>
@@ -122,12 +122,12 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Proposed Electricity infrastructure</h1>
+          <h1>Electricity infrastructure map</h1>
         </p>
         <div class="row" style="margin-bottom:20px">
-<button type="button" class="btn btn-default" onclick="toggleLayers(mastpylon);">Toggle masts and pylons</button>
-<button type="button" class="btn btn-default" onclick="toggleLayers(elsubstation);">Toggle electricity sub stations</button>
-<button type="button" class="btn btn-default" onclick="toggleLayers(elpoles);">Toggle electricity poless</button>
+<button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
+<button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
+<button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poless</button>
 </div>
 
 
@@ -143,7 +143,7 @@
         });
 
 
-      
+
       mastpylon = new google.maps.KmlLayer({
         url: 'http://public.cranfield.ac.uk/s260484/mastPylonExposed.kml',
         map: map
@@ -159,13 +159,19 @@
 
     }
 
-function toggleLayers(layer) {
+
+// Custom function to show and hide the layers
+// Adding function to set the button active/inactive
+function toggleLayers(layer, div) {
 if (layer.getMap() == map) {
 layer.setMap(null);
+document.getElementById(div).className += "btn btn-default";
 } else {
 layer.setMap(map);
+document.getElementById(div).className += "btn btn-default active";
 }
 }
+
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI&callback=initMap"

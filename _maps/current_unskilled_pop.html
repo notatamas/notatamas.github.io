@@ -1,18 +1,21 @@
 ---
-title: Current infrastructure
-description: Current infrastructure in high risk areas.
-img: curr_town.jpg
+title: Unskilled population
+description: Rate of unskilled and unemployed population
+img: unskilled.jpg
 layout: map
 type: current
 application: ArcGIS JS API
-base_layer: ArcGIS Online
+base_layer: ESRI
 layer: ESRI Server
 purpose: Showecase the infrastructure with high risk.
 ---
 
 {% include secure_warning.html %}
 
-<div id="mapDiv" style="height:600px;"></div>
+<div id="mapDiv" style="height:800px;"></div>
+<p class="text-left"> Rate of unskilled and unemployed population </p>
+<img src="/img/unemploy_legend.png">
+
 
 <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css"/>
     <style>
@@ -44,7 +47,7 @@ purpose: Showecase the infrastructure with high risk.
         imageParameters.format = "jpeg"; //set the image type to PNG24, note default is PNG8.
 
         //Takes a URL to a non cached map service.
-        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/MyMapService/MapServer", {
+        var dynamicMapServiceLayer = new ArcGISDynamicMapServiceLayer("http://ccstumap-1.central.cranfield.ac.uk:6080/arcgis/rest/services/s260484/UnemployIOW/MapServer", {
           "opacity" : 0.8,
           "imageParameters" : imageParameters
         });

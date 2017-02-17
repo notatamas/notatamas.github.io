@@ -1,5 +1,5 @@
 ---
-title: Proposed rainfall map
+title: Rainfall map
 description: Rainfall in OpenLeayers and Bing Maps
 img: prop_rainfall.jpg
 layout: map
@@ -55,7 +55,7 @@ purpose: Present the rainfall map.
           var info = [];
           var i, ii;
           for (i = 0, ii = features.length; i < ii; ++i) {
-            info.push(features[i].get('name'));
+            info.push(features[i].get('description'));
           }
           document.getElementById('info').innerHTML = info.join(', ') || '(unknown)';
           map.getTarget().style.cursor = 'pointer';

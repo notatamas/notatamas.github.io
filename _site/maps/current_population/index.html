@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A free and open-source GIS initiative for the Isle of Wight Council">
 
-    <title>Proposed flood and woodland map - FOSS IoW Council</title>
+    <title>Elderly population rate map - FOSS IoW Council</title>
 
-    <link rel="canonical" href="http://localhost:4000/maps/proposed_test.html/">
+    <link rel="canonical" href="http://localhost:4000/maps/current_population/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -108,9 +108,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>Proposed flood and woodland map</h1>
+                    <h1>Elderly population rate map</h1>
                     <hr class="small">
-                    <span class="subheading">Ferry and plane transport in LeafletJS</span>
+                    <span class="subheading">Rate of population above 65 years per POI region</span>
                 </div>
             </div>
         </div>
@@ -122,89 +122,9 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
         <p>
-          <h1>Proposed flood and woodland map</h1>
+          <h1>Elderly population rate map</h1>
         </p>
-            <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
-    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-    <script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
-
-<div class="row">
-<div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
-<strong>Woodland opacity:</strong>
-<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(vector);">+</button>
-<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(vector);">-</button>
-<strong>Flood area opacity:</strong>
-<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(flood);">+</button>
-<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(flood);">-</button>
-</div>
-</div>
-
-    <div id="map" class="map"></div>
-    <div id="info">&nbsp;</div>
-    <script>
-
-
-
-
-      var projection = ol.proj.get('EPSG:3857');
-
-      var raster = new ol.layer.Tile({
-        source: new ol.source.BingMaps({
-          imagerySet: 'Aerial',
-          key: 'px7uRjWF9wUwSGulOggC~kxnRiJcaW8DeaTEjTfwyUQ~AlvtEnBfPvJtKWZyjVPVYIiFrk9h_vgZpY_5vk5fVN6lZIujC2bm6fgt6F6Bg8G3'
-        })
-      });
-
-
-
-      var vector = new ol.layer.Vector({
-style: new ol.style.Style({
-            stroke: new ol.style.Stroke({color: 'red', width: 2})}),
-        source: new ol.source.Vector({
-          url: '/kml/woodland.kml ',
-          format: new ol.format.KML()
-        })
-      });
-
-      var flood = new ol.layer.Vector({
-        source: new ol.source.Vector({
-          url: '/kml/flood.kml ',
-          format: new ol.format.KML()
-        })
-      });
-
-	vector.setVisible(true);
-
-      var map = new ol.Map({
-        layers: [raster, vector, flood],
-        target: document.getElementById('map'),
-        view: new ol.View({
-          center: [-144048.29581448957, 6563375.219131528],
-          projection: projection,
-         zoom: 10
-        })
-      });
-
-
-function increaseLayerOpacity(layer) {
-console.log(layer.getOpacity());
-console.log(ol.Color());
-	if (layer.getOpacity()<0.91) {
-		layer.setOpacity(layer.getOpacity() + 0.1); 
-console.log(layer.getOpacity());
-} 
-}
-
-function decreaseLayerOpacity(layer) {
-console.log(layer.getOpacity());
-	if (layer.getOpacity()>0.09) {
-		layer.setOpacity(layer.getOpacity() - 0.1); 
-console.log(layer.getOpacity());
-} 
-}
-
-    </script>
+        <style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style><div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="iow_soil" src="//cranfield-uni.maps.arcgis.com/apps/View/index.html?appid=afc3f0d4dbaa4fb5813e56f95cecc40e"></iframe></div>
 
       </div>
     </div>
@@ -217,11 +137,11 @@ console.log(layer.getOpacity());
       <ul class="list-group row">
            <li class="list-group-item col-xs-12 text-center">Map information</li>
            <li class="list-group-item col-xs-4">Application:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">OpenLayer</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS Online Web App</li>
            <li class="list-group-item col-xs-4">Base map:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Bing Maps</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI Server</li>
       </ul>
     </div>
 </div>

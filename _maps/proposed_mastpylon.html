@@ -1,7 +1,7 @@
 ---
-title: Proposed Electricity infrastructure
+title: Electricity infrastructure map
 description: Proposed web mapping implemented in Google Maps
-img: iow_soil.jpg
+img: elec.jpg
 layout: map
 type: proposed
 application: Google Maps
@@ -10,9 +10,9 @@ layer: KML
 purpose: Present the soil map.
 ---
 <div class="row" style="margin-bottom:20px">
-<button type="button" class="btn btn-default" onclick="toggleLayers(mastpylon);">Toggle masts and pylons</button>
-<button type="button" class="btn btn-default" onclick="toggleLayers(elsubstation);">Toggle electricity sub stations</button>
-<button type="button" class="btn btn-default" onclick="toggleLayers(elpoles);">Toggle electricity poless</button>
+<button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
+<button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
+<button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poless</button>
 </div>
 
 
@@ -28,7 +28,7 @@ purpose: Present the soil map.
         });
 
 
-      
+
       mastpylon = new google.maps.KmlLayer({
         url: 'http://public.cranfield.ac.uk/s260484/mastPylonExposed.kml',
         map: map
@@ -44,13 +44,19 @@ purpose: Present the soil map.
 
     }
 
-function toggleLayers(layer) {
+
+// Custom function to show and hide the layers
+// Adding function to set the button active/inactive
+function toggleLayers(layer, div) {
 if (layer.getMap() == map) {
 layer.setMap(null);
+document.getElementById(div).className += "btn btn-default";
 } else {
 layer.setMap(map);
+document.getElementById(div).className += "btn btn-default active";
 }
 }
+
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ site.gm_api_key }}&callback=initMap"
