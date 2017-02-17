@@ -1,0 +1,57 @@
+---
+title: Proposed Electricity infrastructure
+description: Proposed web mapping implemented in Google Maps
+img: iow_soil.jpg
+layout: map
+type: proposed
+application: Google Maps
+base_layer: Google Maps
+layer: KML
+purpose: Present the soil map.
+---
+<div class="row" style="margin-bottom:20px">
+<button type="button" class="btn btn-default" onclick="toggleLayers(mastpylon);">Toggle masts and pylons</button>
+<button type="button" class="btn btn-default" onclick="toggleLayers(elsubstation);">Toggle electricity sub stations</button>
+<button type="button" class="btn btn-default" onclick="toggleLayers(elpoles);">Toggle electricity poless</button>
+</div>
+
+
+
+<div id="map" style="height:800px;width:100%;"></div>
+    <script>
+      var markers = {{ site.data.locations | jsonify }};
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {{ site.gm_iow_center }},
+          zoom: 11
+        });
+
+
+      
+      mastpylon = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/mastPylonExposed.kml',
+        map: map
+      });
+      elsubstation = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/elsubstation.kml',
+        map: map
+      });
+      elpoles = new google.maps.KmlLayer({
+        url: 'http://public.cranfield.ac.uk/s260484/elpoles.kml',
+        map: map
+      });
+
+    }
+
+function toggleLayers(layer) {
+if (layer.getMap() == map) {
+layer.setMap(null);
+} else {
+layer.setMap(map);
+}
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.gm_api_key }}&callback=initMap"
+    async defer></script>
