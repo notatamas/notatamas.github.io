@@ -28,14 +28,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 
     <!-- LeafletJS JS -->
-     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <script src="/js/leaflet.js "></script>
 
-     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<!--     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> -->
+     <!-- <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
      <!-- jQuery -->
-     <script src="/js/leaflet-providers.js "></script>
-     <script src="/js/leaflet.ajax.min.js "></script>
+     <!-- <script src="/js/leaflet-providers.js "></script> -->
+     <!-- <script src="/js/leaflet.ajax.min.js "></script> -->
      <script src="/js/leaflet.migrationLayer.js "></script>
      <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
 
@@ -98,6 +103,12 @@
                 </li>
 				
                 
+				
+                <li>
+                    <a href="/xfiltered/">Filter</a>
+                </li>
+				
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -128,9 +139,9 @@
         <p>
           <h1>Key infrastructure map</h1>
         </p>
-        <div class="alert alert-warning alert-dismissable fade in">
+        <div class="alert alert-danger alert-dismissable fade in">
 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-<strong> Please enable loading unsafe scripts on this page, so that the map could connect to ESRI SERVER! <a href="#" data-toggle="modal" data-target="#myModal">More info</a>
+<strong> To view this page loading load unsafe scripts are required. For more information please  <a href="#" class="alert-link" data-toggle="modal" data-target="#myModal"> click here.</a>
  </strong></div>
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -143,7 +154,7 @@
   </div>
   <div class="modal-body">
     <p>In case of Google Chrome, open terminal and start it with the following command:</p>
-      google-chrome --allow-running-insecure-content
+    <b>  google-chrome --allow-running-insecure-content </b>
     <p>Please make sure to close every chrome instance before, otherwise chrome will just start a new tab in the current session. </p>
 
   </div>
@@ -164,16 +175,18 @@
 
 
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
       <p></p>
       <ul class="list-group row">
            <li class="list-group-item col-xs-12 text-center">Map information</li>
            <li class="list-group-item col-xs-4">Application:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGISOnline</li>
            <li class="list-group-item col-xs-4">Base map:</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ArcGIS Online</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">ESRI Server</li>
+           <li class="list-group-item col-xs-4">Purpose:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;"><small>Showecase the key infrastrutcutres on the island.</small></li>
       </ul>
     </div>
 </div>

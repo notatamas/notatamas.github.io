@@ -28,14 +28,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 
     <!-- LeafletJS JS -->
-     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <script src="/js/leaflet.js "></script>
 
-     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<!--     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> -->
+     <!-- <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
      <!-- jQuery -->
-     <script src="/js/leaflet-providers.js "></script>
-     <script src="/js/leaflet.ajax.min.js "></script>
+     <!-- <script src="/js/leaflet-providers.js "></script> -->
+     <!-- <script src="/js/leaflet.ajax.min.js "></script> -->
      <script src="/js/leaflet.migrationLayer.js "></script>
      <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
 
@@ -98,6 +103,12 @@
                 </li>
 				
                 
+				
+                <li>
+                    <a href="/xfiltered/">Filter</a>
+                </li>
+				
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -123,7 +134,7 @@
 
 <!-- Main Content -->
 
-<div class="row bg-grey">
+<div class="row bg-grey" style="padding:50px;">
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
 
@@ -145,108 +156,198 @@
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_exposed/"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
+        <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_exposed/">Wind exposure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_flood/"><img src="/img/iow_flood.jpg" alt="Flood risk map"></a>
+        <a href="/maps/proposed_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Showecase the flood risk on the Isle of Wight" title="Map details"><img src="/img/iow_flood.jpg" alt="Flood risk map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_flood/">Flood risk map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_flood_woodland/"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
+        <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayer <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Present the  flood and woodland areas with opacity toggle buttons" title="Map details"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_flood_woodland/">Flood and woodland map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_marine/"><img src="/img/iow_bedr.jpg" alt="Marine bedrock map"></a>
+        <a href="/maps/proposed_marine/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> WMS <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Showecase the marine bedrock types." title="Map details"><img src="/img/iow_bedr.jpg" alt="Marine bedrock map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_marine/">Marine bedrock map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_mastpylon/"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
+        <a href="/maps/proposed_mastpylon/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the electric pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_mastpylon/">Electricity infrastructure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_rainfall/"><img src="/img/prop_rainfall.jpg" alt="Rainfall map"></a>
+        <a href="/maps/proposed_rainfall/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Present the rainfall map." title="Map details"><img src="/img/prop_rainfall.jpg" alt="Rainfall map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_rainfall/">Rainfall map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_road_town/"><img src="/img/prop_road_town.jpg" alt="Road and town map"></a>
+        <a href="/maps/proposed_road_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the roads and towns on the island." title="Map details"><img src="/img/prop_road_town.jpg" alt="Road and town map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_road_town/">Road and town map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_soil/"><img src="/img/iow_soil.jpg" alt="Soil map"></a>
+        <a href="/maps/proposed_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the soil map." title="Map details"><img src="/img/iow_soil.jpg" alt="Soil map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_soil/">Soil map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
 
 
 
   <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_transport/"><img src="/img/iow_trans.jpg" alt="Transport map"></a>
+        <a href="/maps/proposed_transport/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> JSON <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Present the plane (red) and ferry (yellow) routes to the island." title="Map details"><img src="/img/iow_trans.jpg" alt="Transport map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_transport/">Transport map</a></strong> </br></p>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
 
 

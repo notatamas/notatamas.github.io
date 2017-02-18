@@ -28,14 +28,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 
     <!-- LeafletJS JS -->
-     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <script src="/js/leaflet.js "></script>
 
-     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<!--     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> -->
+     <!-- <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
      <!-- jQuery -->
-     <script src="/js/leaflet-providers.js "></script>
-     <script src="/js/leaflet.ajax.min.js "></script>
+     <!-- <script src="/js/leaflet-providers.js "></script> -->
+     <!-- <script src="/js/leaflet.ajax.min.js "></script> -->
      <script src="/js/leaflet.migrationLayer.js "></script>
      <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
 
@@ -95,6 +100,12 @@
 				
                 <li>
                     <a href="/tourist/">Tourist map</a>
+                </li>
+				
+                
+				
+                <li>
+                    <a href="/xfiltered/">Filter</a>
                 </li>
 				
                 
@@ -215,7 +226,7 @@ console.log(layer.getOpacity());
 
 
 <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4 col-md-10 col-md-offset-1">
+    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
       <p></p>
       <ul class="list-group row">
            <li class="list-group-item col-xs-12 text-center">Map information</li>
@@ -225,6 +236,8 @@ console.log(layer.getOpacity());
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Bing Maps</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML</li>
+           <li class="list-group-item col-xs-4">Purpose:</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;"><small>Present the  flood and woodland areas with opacity toggle buttons</small></li>
       </ul>
     </div>
 </div>

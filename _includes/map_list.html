@@ -1,8 +1,18 @@
 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="{{ map.url }}"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
+        <a href="{{ map.url }}" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> {{ map.application }} <br />
+        <b>Layer(s):</b> {{ map.layer }} <br />
+        <b>Base layer:</b> {{ map.base_layer }} <br />
+        <b>Description:</b> {{ map.purpose }}" title="Map details"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="{{ map.url }}">{{ map.title }}</a></strong> </br></p>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>

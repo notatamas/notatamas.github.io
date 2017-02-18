@@ -1,0 +1,48 @@
+---
+title: Filter
+layout: map_list
+description: "Maps categorized by the data layer"
+---
+
+<h2> The maps can be categorized according to the data sources</h2>
+
+<p class="bg-primary">KML</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.layer contains "KML" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">SHP</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.layer contains "SHP" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">ESRI Server</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.layer contains "ESRI" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">WMS</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.layer contains "WMS" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">GeoJSON/JSON</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.layer contains "GeoJSON" or map.layer contains "JSON"  %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>

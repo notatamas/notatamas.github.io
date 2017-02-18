@@ -28,14 +28,19 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 
     <!-- LeafletJS JS -->
-     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script> -->
+    <script src="/js/leaflet.js "></script>
 
-     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<!--     <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> -->
+     <!-- <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' /> -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
      <!-- jQuery -->
-     <script src="/js/leaflet-providers.js "></script>
-     <script src="/js/leaflet.ajax.min.js "></script>
+     <!-- <script src="/js/leaflet-providers.js "></script> -->
+     <!-- <script src="/js/leaflet.ajax.min.js "></script> -->
      <script src="/js/leaflet.migrationLayer.js "></script>
      <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
 
@@ -98,6 +103,12 @@
                 </li>
 				
                 
+				
+                <li>
+                    <a href="/xfiltered/">Filter</a>
+                </li>
+				
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -133,7 +144,7 @@
                 <h3>Current GIS solutions</h3>
                 <p class="text-justify">Currently the Isle of Wight Council uses a number of proprietary tools for common Geographical Information System related tasks such as data visualization and mapping. The current tools require a large amount of financial resources. The
                     IoW Council challanges the current setup and investigates the possibilties to improve the situation. Find out more about the current technologies: </p>
-                <button type="button" class="btn btn-default">More info</button>
+                <a href="/current " class="btn btn-default">More info</a>
             </div>
         </div>
     </div>
@@ -148,8 +159,8 @@
             <div class="col-md-6">
                 <h3>The Open-source initative</h3>
                 <p class="text-justify"> In 2017 a new initiative was accepted that intends to move the current infrastructure to a free and open-source technology based solution. This task requires a thorough investigation of available GIS tools. The possibilties are endless
-                    and the open-source, community based approach proposes many advantages, including the obvious financial benefits. Find out more about the current technologies: </p>
-                <button type="button" class="btn btn-default">More info</button>
+                    and the open-source, community based approach proposes many advantages, including the obvious financial benefits. Find out more about the proposed technologies: </p>
+                <a href="/proposed " class="btn btn-default">More info</a>
             </div>
             <div class="col-md-6">
                 <img src="/img/home_side2.png" alt="Open-Source">
@@ -165,7 +176,7 @@
     <div class="col-sm-3"> </div>
     <div class="col-sm-6">
         <h3>The purpose of the project</h3>
-        <img src="/img/iow.jpg" class="img-circle img-responsive center-block" alt="New York">
+        <img src="/img/iow.jpg" class="img-circle img-responsive center-block" alt="Purpose">
         <p>The aim of this website is to showcase the current GIS technology used by the Isle of Wight Council to communicate GIS realted information to the general public and to present a possible solution for undertaking the same task with free and open-source
             solutions. </p>
         <a href="https://opensource.org/personas/government" role="button" class="btn btn-default">Open-source Initiative</a>
@@ -186,21 +197,21 @@
                 <i class="fa fa-users fa-5x"></i>
                 <h4>Community</h4>
                 <p class="text-justify">Using Open-source software enables a truly community driven solution for the island.</p>
-                <a href="/ossbenefits/community/" role="button" class="btn btn-default">More info</a>
+              <!--  <a href="/ossbenefits/community/" role="button" class="btn btn-default">More info</a> -->
             </div>
             
             <div class="col-md-4">
                 <i class="fa fa-money fa-5x"></i>
                 <h4>Cost efficiency</h4>
                 <p class="text-justify">Free and open-source solutions lower the costs significantly. Some support fees might still apply.</p>
-                <a href="/ossbenefits/cost/" role="button" class="btn btn-default">More info</a>
+              <!--  <a href="/ossbenefits/cost/" role="button" class="btn btn-default">More info</a> -->
             </div>
             
             <div class="col-md-4">
                 <i class="fa fa-cogs fa-5x"></i>
                 <h4>Flexibility</h4>
                 <p class="text-justify">The open-source world ensures a high level of customizability. This provides more relevant solutions.</p>
-                <a href="/ossbenefits/flexibility/" role="button" class="btn btn-default">More info</a>
+              <!--  <a href="/ossbenefits/flexibility/" role="button" class="btn btn-default">More info</a> -->
             </div>
             
         </div>
@@ -220,32 +231,62 @@
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/curent_town/"><img src="/img/curr_town.jpg" alt="Town map"></a>
+        <a href="/maps/curent_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> ArcGIS Online <br />
+        <b>Description:</b> Showecase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/curent_town/">Town map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_flood/"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
+        <a href="/maps/current_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> ArcGIS Online <br />
+        <b>Description:</b> Showecase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_flood/">Flood map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/current_house_business/"><img src="/img/hhold_business.jpg" alt="Household and business map"></a>
+        <a href="/maps/current_house_business/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> CartoDB <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> OpenStreetMap <br />
+        <b>Description:</b> Showecase the soil types on the Isle of Wight." title="Map details"><img src="/img/hhold_business.jpg" alt="Household and business map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_house_business/">Household and business map</a></strong> </br></p>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
             
 
@@ -255,7 +296,7 @@
     </div>
 </div>
 
-<div class="row bg-grey">
+<div class="row bg-grey" style="padding:50px;">
     <div class="col-sm-8 col-sm-offset-2">
         <div class="container-fluid text-center ">
             <p>
@@ -266,32 +307,62 @@
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_exposed/"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
+        <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_exposed/">Wind exposure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_flood/"><img src="/img/iow_flood.jpg" alt="Flood risk map"></a>
+        <a href="/maps/proposed_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Showecase the flood risk on the Isle of Wight" title="Map details"><img src="/img/iow_flood.jpg" alt="Flood risk map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_flood/">Flood risk map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
             
                 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_flood_woodland/"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
+        <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayer <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Present the  flood and woodland areas with opacity toggle buttons" title="Map details"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_flood_woodland/">Flood and woodland map</a></strong> </br></p>
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
             
 
