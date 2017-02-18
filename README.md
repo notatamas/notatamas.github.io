@@ -31,7 +31,7 @@ An example of using this variable is as follows:
 {% endfor %}
 ```
 
-Another example is the use of Bootstrap Popovers to show information about the maps in the map list at a glance by hovering above the picture.
+A rather comprehensive example is the use of Bootstrap Popovers to show information about the maps in the map list at a glance by hovering above the picture.
 ```HTML
 <a href="{{ map.url }}" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
 data-content="<b>Map type:</b> {{ map.application }} <br />
@@ -46,7 +46,7 @@ The site also makes use of Jekyll "global" variables, and stores them in the con
 ```
 {{ site.gm_api_key }}
 ```
-This way the Google maps API key can be referenced from every page of the site.
+This way the Google maps API key can be referenced from every page of the site that requires it.
 
 #### Modular html files
 The site is created with modular design approach, therefore to avoid repetition, the common elements are included in the following way:
@@ -94,7 +94,7 @@ And buttons to control layer opacity:
 The buttons can be controlled via the Javascript functions:
 
 ```Javascript
-// Increasing layer opacity. Should be assigned to a button
+// Increasing layer opacity.
 function increaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
 	if (layer.getOpacity()<0.91) {
@@ -103,7 +103,7 @@ console.log(layer.getOpacity());
 }
 }
 
-// Decreasing layer opacity. Should be assigned to a button
+// Decreasing layer opacity.
 function decreaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
 	if (layer.getOpacity()>0.09) {
@@ -127,7 +127,7 @@ Proprietary tools used:
 * ArcGIS Web App
 * ESRI server
 
-Free tools:
+Tools with available free plans:
 * Google maps
 * CartoDb
 * ArcGIS JS API
@@ -142,7 +142,7 @@ Open-Source tools:
 
 ## Site structure
 #### Home
-The home page intends to present the project and to show a give a short introduction about the current  state of web mapping tools used by the Isle of Wight. In addition the general assumptions of the proposed web mapping solutions is explained.
+The home page intends to present the project and to give a short introduction about the current  state of web mapping tools used by the Isle of Wight. In addition the general description of the proposed web mapping solutions is explained.
 
 ![alt text](http://i.imgur.com/st7qBlJ.png "Toggle buttons")
 
@@ -163,7 +163,7 @@ The filter page shows the current and proposed maps categorized by the layer dat
 
 ## Warning
 Modern browsers do not allow HTTP requests in sites using HTTPS.
-Since Github pages uses HTTPS and the CU server uses HTTP, some requests are blocked.
+Since Github Pages uses HTTPS and the CU server uses HTTP, some requests are blocked.
 To overcome this issue, the following approach is suggested:
 
 Start Google Chrome with allowed insecure content:
