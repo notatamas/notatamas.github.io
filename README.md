@@ -11,6 +11,7 @@ The site generation is implemented in <a href="https://jekyllrb.com/">Jekyll</a>
  and <a href="https://jquery.com/">jQuery</a>
  and inspired by the <a href="https://startbootstrap.com/template-overviews/clean-blog/">Clean blog</a> Bootstrap theme by <a href="http://davidmiller.io/">David Miller</a>.</p>
 
+#### Maps as a collection
 Each map is stored in a Jekyll Collection, therefore the pages presenting the various maps are created using for loops, such as:
 
 ```
@@ -18,6 +19,8 @@ Each map is stored in a Jekyll Collection, therefore the pages presenting the va
     {% map.sample_content %}
 {% endfor %}
 ```
+
+#### Map variables
 The maps have several variables that are utilized later. An important variable is the map type, that can be either "current" or "proposed".
 
 An example of using this variable is as follows:
@@ -37,6 +40,15 @@ data-content="<b>Map type:</b> {{ map.application }} <br />
 <b>Description:</b> {{ map.purpose }}" title="Map details"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
 ```
 
+#### Global variables
+The site also makes use of Jekyll "global" variables, and stores them in the config file. Later these variables are used as:
+
+```
+{{ site.gm_api_key }}
+```
+This way the Google maps API key can be referenced from every page of the site.
+
+#### Modular html files
 The site is created with modular design approach, therefore to avoid repetition, the common elements are included in the following way:
 
 ```
@@ -47,12 +59,6 @@ An example of this is the following warning:
 ![alt text](http://i.imgur.com/OpbdGdJ.png "Toggle buttons")
 
 
-The site also makes use of Jekyll "global" variables, and stores them in the config file. Later these variables are used as:
-
-```
-{{ site.gm_api_key }}
-```
-This way the Google maps API key can be referenced from every page of the site.
 
 #### Custom functions
 
@@ -145,7 +151,7 @@ The current maps page shows a list of the current maps.
 ![alt text](http://i.imgur.com/Q70cHu0.png "Toggle buttons")
 
 #### Proposed maps
-The proposed maps page shows a list of the proposed maps.
+The proposed maps page shows a list of the proposed maps to the Isle of Wight Council in the same layout as the current maps page.
 
 #### Tourist maps
 The tourist map page shows a proposed image map for the Isle of Wight with tourist information. The destinations are presented with Bootstrap Modals.
