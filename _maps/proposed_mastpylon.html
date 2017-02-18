@@ -10,12 +10,10 @@ layer: KML
 purpose: Present the electric pylons and masts with toggle buttons.
 ---
 <div class="row" style="margin-bottom:20px">
-<button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
-<button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
-<button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poless</button>
+    <button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
+    <button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
+    <button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poless</button>
 </div>
-
-
 
 <div id="map" style="height:800px;width:100%;"></div>
     <script>
@@ -56,7 +54,6 @@ layer.setMap(map);
 document.getElementById(div).className += "btn btn-default active";
 }
 }
-
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ site.gm_api_key }}&callback=initMap"

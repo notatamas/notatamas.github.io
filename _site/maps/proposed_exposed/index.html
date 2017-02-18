@@ -142,13 +142,12 @@
         <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
 
 <div class="row">
-<div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
-<strong>Wind exposure opacity:</strong>
-<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(wmsLayer);">+</button>
-<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(wmsLayer);">-</button>
+    <div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
+        <strong>Wind exposure opacity:</strong>
+        <button type="button" class="btn btn-default" onclick="increaseLayerOpacity(wmsLayer);">+</button>
+        <button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(wmsLayer);">-</button>
+    </div>
 </div>
-</div>
-
 <div class="alert alert-danger alert-dismissable fade in">
 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 <strong> To view this page loading load unsafe scripts are required. For more information please  <a href="#" class="alert-link" data-toggle="modal" data-target="#myModal"> click here.</a>
@@ -209,20 +208,16 @@ var wmsLayer = L.tileLayer.wms('http://ccstumap-1.central.cranfield.ac.uk:8080/g
 var opacityValue = 1;
 
 function increaseLayerOpacity(layer) {
-console.log(opacityValue);
 	if (opacityValue<0.91) {
     opacityValue += 0.1;
 		layer.setOpacity(opacityValue + 0.1);
-console.log(opacityValue);
 }
 }
 
 function decreaseLayerOpacity(layer) {
-console.log(opacityValue);
 	if (opacityValue>0.09) {
     opacityValue -= 0.1;
 		layer.setOpacity(opacityValue - 0.1);
-console.log(opacityValue);
 }
 }
 

@@ -13,13 +13,12 @@ purpose: Show the areas with high wind exposure and key infrastructure.
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
 
 <div class="row">
-<div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
-<strong>Wind exposure opacity:</strong>
-<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(wmsLayer);">+</button>
-<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(wmsLayer);">-</button>
+    <div class="col-lg-8 col-lg-offset-2" style="margin-bottom:20px">
+        <strong>Wind exposure opacity:</strong>
+        <button type="button" class="btn btn-default" onclick="increaseLayerOpacity(wmsLayer);">+</button>
+        <button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(wmsLayer);">-</button>
+    </div>
 </div>
-</div>
-
 {% include secure_warning.html %}
 
 
@@ -33,7 +32,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q'
+    accessToken: '{{ site.mapbox_api_key }}'
 }).addTo(mymap);
 
 
@@ -54,20 +53,16 @@ var wmsLayer = L.tileLayer.wms('http://ccstumap-1.central.cranfield.ac.uk:8080/g
 var opacityValue = 1;
 
 function increaseLayerOpacity(layer) {
-console.log(opacityValue);
 	if (opacityValue<0.91) {
     opacityValue += 0.1;
 		layer.setOpacity(opacityValue + 0.1);
-console.log(opacityValue);
 }
 }
 
 function decreaseLayerOpacity(layer) {
-console.log(opacityValue);
 	if (opacityValue>0.09) {
     opacityValue -= 0.1;
 		layer.setOpacity(opacityValue - 0.1);
-console.log(opacityValue);
 }
 }
 
