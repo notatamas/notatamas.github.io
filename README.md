@@ -28,6 +28,22 @@ The site also makes use of Jekyll variables, and stores them in the config file.
 ```
 This way the Google maps API key can be referenced from every page of the site.
 
+## Warning
+Modern browsers do not allow HTTP requests in sites using HTTPS.
+Since Github pages uses HTTPS and the CU server uses HTTP, some requests are blocked.
+To overcome this issue, the following approach is suggested:
+
+Start chrome with allowed insecure content:
+
+On \*nix systems:
+```
+google-chrome --allow-running-insecure-content
+```
+On Windows:
+```
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-running-insecure-content
+```
+Please make sure to close every chrome instance before, otherwise chrome will just start a new tab in the current session.
 
 ## To examine the code locally:
 * Clone or download the repository
