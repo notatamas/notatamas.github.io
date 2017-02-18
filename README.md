@@ -52,11 +52,61 @@ This way the Google maps API key can be referenced from every page of the site.
 
 A set of custom functions were implemented to control layers from Google Maps and OpenLayers.
 This includes toggle buttons:
+
 ![alt text](http://i.imgur.com/XDkDPtA.png "Toggle buttons")
 
+```Javascript
+function toggleLayers(layer, div) {
+if (layer.getMap() == map) {
+layer.setMap(null);
+document.getElementById(div).className += "btn btn-default";
+} else {
+layer.setMap(map);
+document.getElementById(div).className += "btn btn-default active";
+}
+}
+```
+Controlled by the buttons:
+```HTML
+<div class="row" style="margin-bottom:20px">
+    <button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
+    <button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
+    <button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poles</button>
+</div>
+```
+
 And buttons to control layer opacity:
+
 ![alt text](http://i.imgur.com/ZmvV1HU.png "Toggle buttons")
 
+The buttons can be controlled via the Javascript functions:
+
+```Javascript
+// Increasing layer opacity. Should be assigned to a button
+function increaseLayerOpacity(layer) {
+console.log(layer.getOpacity());
+	if (layer.getOpacity()<0.91) {
+		layer.setOpacity(layer.getOpacity() + 0.1);
+console.log(layer.getOpacity());
+}
+}
+
+// Decreasing layer opacity. Should be assigned to a button
+function decreaseLayerOpacity(layer) {
+console.log(layer.getOpacity());
+	if (layer.getOpacity()>0.09) {
+		layer.setOpacity(layer.getOpacity() - 0.1);
+console.log(layer.getOpacity());
+}
+}
+```
+
+The functions are called by
+```HTML
+<strong>Flood area opacity:</strong>
+<button type="button" class="btn btn-default" onclick="increaseLayerOpacity(flood);">+</button>
+<button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(flood);">-</button>
+```
 
 ## Used mapping tools and base layer providers
 
