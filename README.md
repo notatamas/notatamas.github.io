@@ -2,6 +2,8 @@
 
 This project is created as an academic assignment for the SDI Module on CU. The website incorporates a number of proprietary and free GIS mapping solutions.
 
+The site is created to present a prototype website to showcase the possible transformation from the currently used proprietary web mapping tools used by the IoW Council to free and open-source alternatives.
+
 ## Approach
 
 The site generation is implemented in <a href="https://jekyllrb.com/">Jekyll</a>. The layout is generated with the <a href="http://shopify.github.io/liquid/">Liquid</a> template language. Hosted on <a href="https://pages.github.com/">Github Pages</a>,
@@ -16,24 +18,71 @@ Each map is stored in a Jekyll Collection, therefore the pages presenting the va
     {% map.sample_content %}
 {% endfor %}
 ```
-The site is created with modular design principles, therefore to avoid repetition, the common elements are included in the following way:
+The maps have several variables that are utilized later. An important variable is the map type, that can be either "current" or "proposed".
+
+An example of using this variable is as follows:
+```
+{% assign current_map = site.maps | where:"type","current" %}
+{% for map in current_map limit:3 %}
+    {% include map_list.html %}
+{% endfor %}
+```
+
+Another example is the use of Bootstrap Popovers to show information about the maps in the map list at a glance by hovering above the picture.
+```HTML
+<a href="{{ map.url }}" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+data-content="<b>Map type:</b> {{ map.application }} <br />
+<b>Layer(s):</b> {{ map.layer }} <br />
+<b>Base layer:</b> {{ map.base_layer }} <br />
+<b>Description:</b> {{ map.purpose }}" title="Map details"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
+```
+
+The site is created with modular design approach, therefore to avoid repetition, the common elements are included in the following way:
+
 ```
 {% include secure_warning.html %}
 ```
 
-The site also makes use of Jekyll variables, and stores them in the config file. Later these variables are used as:
+The site also makes use of Jekyll "global" variables, and stores them in the config file. Later these variables are used as:
 
 ```
 {{ site.gm_api_key }}
 ```
 This way the Google maps API key can be referenced from every page of the site.
 
+A set of custom functions were implemented to control layers from Google Maps and OpenLayers.
+This includes toggle buttons:
+![alt text](http://i.imgur.com/XDkDPtA.png "Toggle buttons")
+
+And buttons to control layer opacity:
+![alt text](http://i.imgur.com/ZmvV1HU.png "Toggle buttons")
+
+
+## Used mapping tools and base layer providers
+
+Proprietary tools used:
+* ESRI ArcGIS Online
+* ArcGIS Web App
+* ESRI server
+
+Free tools:
+* Google maps
+* CartoDb
+* ArcGIS JS API
+* MapBox
+* Bing Maps
+
+Open-Source tools:
+* OpenLayers
+* LeafletJS
+* OpenStreetMap
+
 ## Warning
 Modern browsers do not allow HTTP requests in sites using HTTPS.
 Since Github pages uses HTTPS and the CU server uses HTTP, some requests are blocked.
 To overcome this issue, the following approach is suggested:
 
-Start chrome with allowed insecure content:
+Start Google Chrome with allowed insecure content:
 
 On \*nix systems:
 ```
@@ -45,7 +94,7 @@ On Windows:
 ```
 Please make sure to close every chrome instance before, otherwise chrome will just start a new tab in the current session.
 
-## To examine the code locally:
+## To examine the project locally:
 * Clone or download the repository
 * Install Ruby and Jekyll
 * Cd into the folder

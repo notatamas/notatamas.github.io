@@ -141,8 +141,11 @@
         </p>
         <div id="map" style="height:800px;width:100%;"></div>
     <script>
+
+    // Getting the marker data from the CSV and converting to JSON
       var markers = [{"latitude":"50.761838","longitude":"-1.2978347","name":"Cowes","population":"16278"},{"latitude":"50.701712","longitude":"-1.2888204","name":"Newport","population":"20324"},{"latitude":"50.729436","longitude":"-1.1577647","name":"Ryde","population":"19843"},{"latitude":"50.685672","longitude":"-1.0787102","name":"Bembridge","population":"3452"},{"latitude":"50.679306","longitude":"-1.1399791","name":"Brading","population":"2071"},{"latitude":"50.758148","longitude":"-1.2825783","name":"East Cowes","population":"209"},{"latitude":"50.654764","longitude":"-1.1534418","name":"Sandown","population":"4813"},{"latitude":"50.628104","longitude":"-1.1728659","name":"Shanklin","population":"8140"},{"latitude":"50.685663","longitude":"-1.5291400","name":"Totland","population":"2316"},{"latitude":"50.595948","longitude":"-1.2042300","name":"Ventnor","population":"6458"}];
       var map;
+      //Initializing the map with Google maps
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 50.684268, lng: -1.291813},
@@ -156,6 +159,7 @@
   				title: markers[i].name
   			});
 
+// Adding popup listener to the map to display town name and population
         var content = "<h4>" + markers[i].name + "</h4>" + "</br>" + "population: " + markers[i].population;
         var infowindow = new google.maps.InfoWindow()
         google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
@@ -166,7 +170,7 @@
             })(marker,content,infowindow));
       }
 
-
+// Adding the layers to the map
       var layers = [];
       layers[0] = new google.maps.KmlLayer({
         url: 'http://public.cranfield.ac.uk/s260484/a_road.kml',
@@ -213,7 +217,7 @@ function loadKmlLayer(layers, map) {
            <li class="list-group-item col-xs-4">Base map:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Google Maps</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML + CSV as JSON</li>
            <li class="list-group-item col-xs-4">Purpose:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;"><small>Present the roads and towns on the island.</small></li>
       </ul>

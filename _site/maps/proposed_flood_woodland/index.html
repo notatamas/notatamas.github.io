@@ -139,7 +139,8 @@
         <p>
           <h1>Flood and woodland map</h1>
         </p>
-            <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+        <!-- Leaving these JS/CSS files here, since these are not needed for other maps -->
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
     <script src="https://openlayers.org/en/v4.0.1/build/ol.js"></script>
@@ -157,13 +158,12 @@
 
     <div id="map" class="map"></div>
     <div id="info">&nbsp;</div>
+
+
     <script>
 
-
-
-
       var projection = ol.proj.get('EPSG:3857');
-
+//Using the Bing Maps as base raster layer
       var raster = new ol.layer.Tile({
         source: new ol.source.BingMaps({
           imagerySet: 'Aerial',
@@ -172,7 +172,7 @@
       });
 
 
-
+// Adding Woodland layer from a kml file
       var vector = new ol.layer.Vector({
 style: new ol.style.Style({
             stroke: new ol.style.Stroke({color: 'red', width: 2})}),
@@ -182,6 +182,7 @@ style: new ol.style.Style({
         })
       });
 
+// Adding the flood layer from a kml file
       var flood = new ol.layer.Vector({
         source: new ol.source.Vector({
           url: '/kml/flood.kml ',
@@ -190,7 +191,7 @@ style: new ol.style.Style({
       });
 
 	vector.setVisible(true);
-
+//Creating the map, setting the center and zoom level
       var map = new ol.Map({
         layers: [raster, vector, flood],
         target: document.getElementById('map'),
@@ -201,7 +202,7 @@ style: new ol.style.Style({
         })
       });
 
-
+// Increasing layer opacity. Should be assigned to a button
 function increaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
 	if (layer.getOpacity()<0.91) {
@@ -210,6 +211,7 @@ console.log(layer.getOpacity());
 }
 }
 
+// Decreasing layer opacity. Should be assigned to a button
 function decreaseLayerOpacity(layer) {
 console.log(layer.getOpacity());
 	if (layer.getOpacity()>0.09) {

@@ -6,14 +6,17 @@ layout: map
 type: proposed
 application: Google Maps
 base_layer: Google Maps
-layer: KML
+layer: KML + CSV as JSON
 purpose: Present the roads and towns on the island.
 ---
 
 <div id="map" style="height:800px;width:100%;"></div>
     <script>
+
+    // Getting the marker data from the CSV and converting to JSON
       var markers = {{ site.data.locations | jsonify }};
       var map;
+      //Initializing the map with Google maps
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {{ site.gm_iow_center }},
@@ -27,6 +30,7 @@ purpose: Present the roads and towns on the island.
   				title: markers[i].name
   			});
 
+// Adding popup listener to the map to display town name and population
         var content = "<h4>" + markers[i].name + "</h4>" + "</br>" + "population: " + markers[i].population;
         var infowindow = new google.maps.InfoWindow()
         google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
@@ -37,7 +41,7 @@ purpose: Present the roads and towns on the island.
             })(marker,content,infowindow));
       }
 
-
+// Adding the layers to the map
       var layers = [];
       layers[0] = new google.maps.KmlLayer({
         url: 'http://public.cranfield.ac.uk/s260484/a_road.kml',

@@ -146,11 +146,13 @@
 <div id="map" class="map" style="height: 700px"></div>
 
 <script>
+// Setting the initial text for the Indo DIV [Changed later]
       var hoverText = "Please hover above the flood area to assess the risk level!";
       document.getElementById('info').innerHTML = hoverText;
 
       var projection = ol.proj.get('EPSG:3857');
 
+// Setting the initial raster layer from Bing Maps
       var raster = new ol.layer.Tile({
         source: new ol.source.BingMaps({
           imagerySet: 'Aerial',
@@ -158,6 +160,7 @@
         })
       });
 
+// Adding the vector kml layer
       var vector = new ol.layer.Vector({
         source: new ol.source.Vector({
           url: '/kml/flood.kml ',
@@ -165,7 +168,7 @@
         })
       });
       vector.setOpacity(0.4);
-
+// Creating the ap with the layers
       var map = new ol.Map({
         layers: [raster, vector],
         target: document.getElementById('map'),
@@ -176,6 +179,7 @@
         })
       });
 
+// Getting the values of the hovered area
       var displayFeatureInfo = function(pixel) {
         var features = [];
         map.forEachFeatureAtPixel(pixel, function(feature) {
@@ -195,6 +199,7 @@
         }
       };
 
+// Setting the mouse pointer"
       map.on('pointermove', function(evt) {
         if (evt.dragging) {
           return;
@@ -202,7 +207,7 @@
         var pixel = map.getEventPixel(evt.originalEvent);
         displayFeatureInfo(pixel);
       });
-
+// Adding the click functionality
       map.on('click', function(evt) {
         displayFeatureInfo(evt.pixel);
       });

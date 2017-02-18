@@ -9,7 +9,7 @@ baseurl: "" #
 url: "http://notatamas.github.io"
 gm_api_key: "AIzaSyD8xJbcp-KsNWgINadoiz1Ei6_NUywj5UI"
 gm_iow_center: "{lat: 50.684268, lng: -1.291813}"
-bing_api_key:
+bing_api_key: px7uRjWF9wUwSGulOggC~kxnRiJcaW8DeaTEjTfwyUQ~AlvtEnBfPvJtKWZyjVPVYIiFrk9h_vgZpY_5vk5fVN6lZIujC2bm6fgt6F6Bg8G3
 mapbox_api_key: pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q
 twitter_username: tomas_antal
 github_username:  notatamas/notatamas.github.io

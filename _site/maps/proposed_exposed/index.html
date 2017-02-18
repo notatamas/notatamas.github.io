@@ -148,6 +148,7 @@
         <button type="button" class="btn btn-default" onclick="decreaseLayerOpacity(wmsLayer);">-</button>
     </div>
 </div>
+
 <div class="alert alert-danger alert-dismissable fade in">
 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 <strong> To view this page loading load unsafe scripts are required. For more information please  <a href="#" class="alert-link" data-toggle="modal" data-target="#myModal"> click here.</a>
@@ -180,9 +181,11 @@
 <div id="mapid" style="height: 800px"></div>
 
 <script>
+//Setting the map for the page
 var mymap = L.map('mapid').setView([50.7, -1.3], 11);
 //L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q').addTo(mymap);
 
+// Using this method instead, since Firefox and Edge had problems with the upper
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
@@ -190,12 +193,13 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q'
 }).addTo(mymap);
 
-
+// Adding the WMS layer from GeoServer
 var wmsLayer = L.tileLayer.wms('http://ccstumap-1.central.cranfield.ac.uk:8080/geoserver/s260484/wms',
 { layers: "	s260484:veryExposedArea",
   format: 'image/png',
   transparent: true,}).addTo(mymap);
 
+// Adding the Mast and Pylon POI markers from KML file
   var mastPylonLayer = omnivore.kml('/kml/mastPylonExposed.kml')
     .on('ready', function() {
         mymap.fitBounds(mastPylonLayer.getBounds());
@@ -205,15 +209,16 @@ var wmsLayer = L.tileLayer.wms('http://ccstumap-1.central.cranfield.ac.uk:8080/g
   })
     .addTo(mymap);
 
+// Setting the initial opacityValue variable for the functions
 var opacityValue = 1;
-
+//Increasing the opacity of the layer
 function increaseLayerOpacity(layer) {
 	if (opacityValue<0.91) {
     opacityValue += 0.1;
 		layer.setOpacity(opacityValue + 0.1);
 }
 }
-
+//Decreasing the opacity of the layer
 function decreaseLayerOpacity(layer) {
 	if (opacityValue>0.09) {
     opacityValue -= 0.1;

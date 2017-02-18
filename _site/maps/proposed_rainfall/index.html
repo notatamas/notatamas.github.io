@@ -144,11 +144,13 @@
 <div id="map" class="map" style="height: 800px"></div>
 
 <script>
+//Setting the initial text for the info bar
       var hoverText = "Please hover above area to assess the rainfall level!";
       document.getElementById('info').innerHTML = hoverText;
 
       var projection = ol.proj.get('EPSG:3857');
 
+// Adding the base layer from Bing Maps
       var raster = new ol.layer.Tile({
         source: new ol.source.BingMaps({
           imagerySet: 'Aerial',
@@ -156,6 +158,7 @@
         })
       });
 
+// Adding the vector layer from the KML file
       var vector = new ol.layer.Vector({
         source: new ol.source.Vector({
           url: '/kml/rainfall.kml ',
@@ -164,6 +167,7 @@
       });
       vector.setOpacity(0.4);
 
+// Creating the map with zoom level, and center
       var map = new ol.Map({
         layers: [raster, vector],
         target: document.getElementById('map'),
@@ -174,6 +178,8 @@
         })
       });
 
+
+//Getting the information for the info bar
       var displayFeatureInfo = function(pixel) {
         var features = [];
         map.forEachFeatureAtPixel(pixel, function(feature) {

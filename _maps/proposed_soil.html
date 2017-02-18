@@ -20,6 +20,8 @@ purpose: Present the soil map.
       zoom: 14
     });
 
+// Adding simple KML file from public storage
+// Google maps does not load KML from Github Pages for some reason
     var ctaLayer = new google.maps.KmlLayer({
       url: 'http://public.cranfield.ac.uk/s260484/soil.kml',
       map: map

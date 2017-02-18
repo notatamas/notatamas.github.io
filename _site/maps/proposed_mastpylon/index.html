@@ -142,11 +142,14 @@
         <div class="row" style="margin-bottom:20px">
     <button id="mastPylonButton" type="button" class="btn btn-default active" onclick="toggleLayers(mastpylon, this.id);">Toggle masts and pylons</button>
     <button id="elecSubButton" type="button" class="btn btn-default active" onclick="toggleLayers(elsubstation, this.id);">Toggle electricity sub stations</button>
-    <button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poless</button>
+    <button id="elecPoleButton" type="button" class="btn btn-default active" onclick="toggleLayers(elpoles, this.id);">Toggle electricity poles</button>
 </div>
 
 <div id="map" style="height:800px;width:100%;"></div>
+
     <script>
+
+    // Getting the CSV data and convert to JSON
       var markers = [{"latitude":"50.761838","longitude":"-1.2978347","name":"Cowes","population":"16278"},{"latitude":"50.701712","longitude":"-1.2888204","name":"Newport","population":"20324"},{"latitude":"50.729436","longitude":"-1.1577647","name":"Ryde","population":"19843"},{"latitude":"50.685672","longitude":"-1.0787102","name":"Bembridge","population":"3452"},{"latitude":"50.679306","longitude":"-1.1399791","name":"Brading","population":"2071"},{"latitude":"50.758148","longitude":"-1.2825783","name":"East Cowes","population":"209"},{"latitude":"50.654764","longitude":"-1.1534418","name":"Sandown","population":"4813"},{"latitude":"50.628104","longitude":"-1.1728659","name":"Shanklin","population":"8140"},{"latitude":"50.685663","longitude":"-1.5291400","name":"Totland","population":"2316"},{"latitude":"50.595948","longitude":"-1.2042300","name":"Ventnor","population":"6458"}];
       var map;
       function initMap() {
@@ -156,7 +159,7 @@
         });
 
 
-
+// Adding the three layers
       mastpylon = new google.maps.KmlLayer({
         url: 'http://public.cranfield.ac.uk/s260484/mastPylonExposed.kml',
         map: map
@@ -204,7 +207,7 @@ document.getElementById(div).className += "btn btn-default active";
            <li class="list-group-item col-xs-4">Base map:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">Google Maps</li>
            <li class="list-group-item col-xs-4">Layer(s):</li>
-           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML</li>
+           <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;">KML + JSON from CSV</li>
            <li class="list-group-item col-xs-4">Purpose:</li>
            <li class="list-group-item col-xs-8 text-left" style="font-weight: normal !important;"><small>Present the electric pylons and masts with toggle buttons.</small></li>
       </ul>
