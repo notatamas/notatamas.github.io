@@ -1,3 +1,4 @@
+<!-- Looping through all the maps and displaying them -->
 <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="{{ map.url }}" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
@@ -11,6 +12,7 @@
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();

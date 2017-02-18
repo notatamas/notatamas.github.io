@@ -5,6 +5,7 @@ description: "Simplified tourist information of the Isle of Wight"
 header-img: "img/iow_header2.jpg"
 ---
 
+<!-- Intro and list of the tourist destinations -->
 <div class="container">
     <div class="row">
 
@@ -21,8 +22,9 @@ header-img: "img/iow_header2.jpg"
         {% endfor %}
       </ul>
 
+<!-- The IOW image for the image mapping -->
 <img src="{{ site.baseurl }}/img/iow_map.jpg" alt="Tourist map" usemap="#touristmap">
-
+<!-- Loop through the infos -->
 <map name="touristmap">
   {% for info in site.tourist_info %}
     <area shape="{{ info.shape }}" coords="{{ info.coords }}" alt="Sun" data-toggle="modal" data-target="#{{ info.slug }}" data-toggle="tooltip" title="{{ info.title }}">

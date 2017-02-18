@@ -138,7 +138,8 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
 
-        <h2> Maps categorized by data sources</h2>
+        <!-- Maps by data source -->
+<h2> Maps categorized by data sources</h2>
 
 <p class="bg-primary">KML</p>
 <div class="row">
@@ -158,11 +159,12 @@
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
-        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML <br />
         <b>Base layer:</b> MapBox <br />
         <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
         <div style="min-height:50;overflow:hidden;">
@@ -171,6 +173,7 @@
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -180,7 +183,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -193,6 +197,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -202,7 +207,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -215,6 +221,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -226,19 +233,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_mastpylon/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
-        <b>Layer(s):</b> KML + JSON from CSV <br />
+        <b>Layer(s):</b> KML <br />
         <b>Base layer:</b> Google Maps <br />
-        <b>Description:</b> Present the electric pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
+        <b>Description:</b> Present the electricity pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_mastpylon/">Electricity infrastructure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -248,7 +257,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_rainfall/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -261,6 +271,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -270,7 +281,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_road_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
@@ -283,6 +295,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -292,7 +305,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
@@ -305,6 +319,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -320,19 +335,21 @@ $(document).ready(function(){
 <div class="row">
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/curent_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
+        <b>Description:</b> Showcase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/curent_town/">Town map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -342,19 +359,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
+        <b>Description:</b> Showcase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_flood/">Flood map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -364,19 +383,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_house_business/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> CartoDB <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> OpenStreetMap <br />
-        <b>Description:</b> Showecase the population above 65 years per PO region." title="Map details"><img src="/img/hhold_business.jpg" alt="Household and business map"></a>
+        <b>Description:</b> Showcase the number of households and businesses by region." title="Map details"><img src="/img/hhold_business.jpg" alt="Household and business map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_house_business/">Household and business map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -390,19 +411,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the soil types on the Isle of Wight." title="Map details"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
+        <b>Description:</b> Showcase the soil types on the Isle of Wight." title="Map details"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_soil/">Current soil map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -442,7 +465,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_population/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS Online Web App <br />
@@ -455,6 +479,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -464,19 +489,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_risk/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGISOnline <br />
         <b>Layer(s):</b> ESRI Server <br />
         <b>Base layer:</b> ESRI <br />
-        <b>Description:</b> Showecase the key infrastrutcutres on the island." title="Map details"><img src="/img/key_infr.jpg" alt="Key infrastructure map"></a>
+        <b>Description:</b> Showcase the key infrastrutcutres on the island." title="Map details"><img src="/img/key_infr.jpg" alt="Key infrastructure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_risk/">Key infrastructure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -488,19 +515,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_unskilled_pop/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS JS API <br />
         <b>Layer(s):</b> ESRI Server <br />
         <b>Base layer:</b> ESRI <br />
-        <b>Description:</b> Present the rates of unskilled and unemployed population in the PO areas." title="Map details"><img src="/img/unskilled.jpg" alt="Unskilled population"></a>
+        <b>Description:</b> Present the rates of unskilled and unemployed population." title="Map details"><img src="/img/unskilled.jpg" alt="Unskilled population"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_unskilled_pop/">Unskilled population</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -546,11 +575,12 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
-        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML <br />
         <b>Base layer:</b> MapBox <br />
         <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
         <div style="min-height:50;overflow:hidden;">
@@ -559,6 +589,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -572,7 +603,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_marine/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
@@ -585,6 +617,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -622,24 +655,6 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
-        data-content="<b>Map type:</b> LeafletJS <br />
-        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
-        <b>Base layer:</b> MapBox <br />
-        <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/proposed_exposed/">Wind exposure map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>
 
 
 
@@ -650,31 +665,10 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
-    <div class="thumbnail" style="width: 100%; display: block;">
-        <a href="/maps/proposed_mastpylon/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
-        data-content="<b>Map type:</b> Google Maps <br />
-        <b>Layer(s):</b> KML + JSON from CSV <br />
-        <b>Base layer:</b> Google Maps <br />
-        <b>Description:</b> Present the electric pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
-        <div style="min-height:50;overflow:hidden;">
-        <p><strong><a href="/maps/proposed_mastpylon/">Electricity infrastructure map</a></strong> </br></p>
-        </div>
-    </div>
-</div>
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>
 
 
-
-
-
-
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_road_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
@@ -687,6 +681,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -698,7 +693,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_transport/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
@@ -711,6 +707,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -721,25 +718,28 @@ $(document).ready(function(){
 
 </div>
 
+<!-- Maps by used application-->
 <h2> Maps categorized by applications</h2>
 
 <p class="bg-primary">ArcGIS (Online, JS API, WebApp)</p>
 <div class="row">
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/curent_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
+        <b>Description:</b> Showcase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/curent_town/">Town map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -749,19 +749,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
+        <b>Description:</b> Showcase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_flood/">Flood map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -773,7 +775,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_population/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS Online Web App <br />
@@ -786,6 +789,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -795,19 +799,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_risk/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGISOnline <br />
         <b>Layer(s):</b> ESRI Server <br />
         <b>Base layer:</b> ESRI <br />
-        <b>Description:</b> Showecase the key infrastrutcutres on the island." title="Map details"><img src="/img/key_infr.jpg" alt="Key infrastructure map"></a>
+        <b>Description:</b> Showcase the key infrastrutcutres on the island." title="Map details"><img src="/img/key_infr.jpg" alt="Key infrastructure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_risk/">Key infrastructure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -817,19 +823,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS <br />
         <b>Layer(s):</b> SHP <br />
         <b>Base layer:</b> ArcGIS Online <br />
-        <b>Description:</b> Showecase the soil types on the Isle of Wight." title="Map details"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
+        <b>Description:</b> Showcase the soil types on the Isle of Wight." title="Map details"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_soil/">Current soil map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -839,19 +847,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/current_unskilled_pop/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> ArcGIS JS API <br />
         <b>Layer(s):</b> ESRI Server <br />
         <b>Base layer:</b> ESRI <br />
-        <b>Description:</b> Present the rates of unskilled and unemployed population in the PO areas." title="Map details"><img src="/img/unskilled.jpg" alt="Unskilled population"></a>
+        <b>Description:</b> Present the rates of unskilled and unemployed population." title="Map details"><img src="/img/unskilled.jpg" alt="Unskilled population"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/current_unskilled_pop/">Unskilled population</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -905,19 +915,21 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_mastpylon/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
-        <b>Layer(s):</b> KML + JSON from CSV <br />
+        <b>Layer(s):</b> KML <br />
         <b>Base layer:</b> Google Maps <br />
-        <b>Description:</b> Present the electric pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
+        <b>Description:</b> Present the electricity pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
         <div style="min-height:50;overflow:hidden;">
         <p><strong><a href="/maps/proposed_mastpylon/">Electricity infrastructure map</a></strong> </br></p>
         </div>
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -929,7 +941,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_road_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
@@ -942,6 +955,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -951,7 +965,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> Google Maps <br />
@@ -964,6 +979,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -995,7 +1011,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -1008,6 +1025,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -1017,7 +1035,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -1030,6 +1049,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -1043,7 +1063,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_rainfall/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> OpenLayers <br />
@@ -1056,6 +1077,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -1089,11 +1111,12 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
-        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML <br />
         <b>Base layer:</b> MapBox <br />
         <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
         <div style="min-height:50;overflow:hidden;">
@@ -1102,6 +1125,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -1115,7 +1139,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_marine/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
@@ -1128,6 +1153,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -1145,7 +1171,8 @@ $(document).ready(function(){
 
 
 
-    <div class="col-sm-4 col-lg-4">
+    <!-- Looping through all the maps and displaying them -->
+<div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_transport/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
         data-content="<b>Map type:</b> LeafletJS <br />
@@ -1158,6 +1185,7 @@ $(document).ready(function(){
     </div>
 </div>
 
+<!-- Function for the popover -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
