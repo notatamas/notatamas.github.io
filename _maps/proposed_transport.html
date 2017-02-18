@@ -7,7 +7,7 @@ type: proposed
 application: LeafletJS
 base_layer: MapBox
 layer: JSON
-purpose: Present the plane (red) and ferry (yellow) routes to the island. 
+purpose: Present the plane (red) and ferry (yellow) routes to the island.
 ---
 
 
@@ -22,7 +22,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1Ijoibm90YXRhbWFzIiwiYSI6ImNpejVpdmJxczAwNTMycXBqOGp1dXhuN20ifQ.qkyc6X_8rg9a3TI1S5wu5Q'
+    accessToken: '{{ site.mapbox_api_key }}'
 }).addTo(mymap);
 
 var data = [{"from":[-1.3582,50.9500],"to":[-1.1108,50.67801],"labels":["Southampton","Brading Airport"],"color":"#ff3a31"},
