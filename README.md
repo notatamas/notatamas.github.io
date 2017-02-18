@@ -40,6 +40,9 @@ data-content="<b>Map type:</b> {{ map.application }} <br />
 <b>Description:</b> {{ map.purpose }}" title="Map details"><img src="{{ site.baseurl }}/img/{{ map.img }}" alt="{{ map.title }}"></a>
 ```
 
+![alt text](http://i.imgur.com/fViumfC.png "popover")
+
+
 #### Global variables
 The site also makes use of Jekyll "global" variables, and stores them in the configuration file. Later these variables are used as:
 
