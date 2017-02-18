@@ -4,7 +4,7 @@ layout: map_list
 description: "Maps categorized by the data layer"
 ---
 
-<h2> The maps can be categorized according to the data sources</h2>
+<h2> Maps categorized by data sources</h2>
 
 <p class="bg-primary">KML</p>
 <div class="row">
@@ -42,6 +42,41 @@ description: "Maps categorized by the data layer"
 <div class="row">
 {% for map in site.maps %}
 {% if map.layer contains "GeoJSON" or map.layer contains "JSON"  %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+
+<h2> Maps categorized by applications</h2>
+
+<p class="bg-primary">ArcGIS (Online, JS API, WebApp)</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.application contains "ArcGIS" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">Google Maps</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.application contains "Google" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">OpenLayers</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.application contains "OpenLayers" %}
+    {% include map_list.html %}
+{% endif %}
+{% endfor %}
+</div>
+<p class="bg-primary">LeafletJS</p>
+<div class="row">
+{% for map in site.maps %}
+{% if map.application contains "Leaflet" %}
     {% include map_list.html %}
 {% endif %}
 {% endfor %}

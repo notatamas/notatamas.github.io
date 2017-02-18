@@ -138,7 +138,7 @@
     <div class="col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="container-fluid text-center ">
 
-        <h2> The maps can be categorized according to the data sources</h2>
+        <h2> Maps categorized by data sources</h2>
 
 <p class="bg-primary">KML</p>
 <div class="row">
@@ -205,7 +205,7 @@ $(document).ready(function(){
     <div class="col-sm-4 col-lg-4">
     <div class="thumbnail" style="width: 100%; display: block;">
         <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
-        data-content="<b>Map type:</b> OpenLayer <br />
+        data-content="<b>Map type:</b> OpenLayers <br />
         <b>Layer(s):</b> KML <br />
         <b>Base layer:</b> Bing Maps <br />
         <b>Description:</b> Present the  flood and woodland areas with opacity toggle buttons" title="Map details"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
@@ -646,6 +646,453 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_transport/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> JSON <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Present the plane (red) and ferry (yellow) routes to the island." title="Map details"><img src="/img/iow_trans.jpg" alt="Transport map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_transport/">Transport map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+</div>
+
+<h2> Maps categorized by applications</h2>
+
+<p class="bg-primary">ArcGIS (Online, JS API, WebApp)</p>
+<div class="row">
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/curent_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> ArcGIS Online <br />
+        <b>Description:</b> Showecase the towns with population." title="Map details"><img src="/img/curr_town.jpg" alt="Town map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/curent_town/">Town map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/current_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> ArcGIS Online <br />
+        <b>Description:</b> Showecase the flood mapping capabilities." title="Map details"><img src="/img/curr_flood.jpg" alt="Flood map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/current_flood/">Flood map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/current_population/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS Online Web App <br />
+        <b>Layer(s):</b> ESRI Server <br />
+        <b>Base layer:</b> ESRI <br />
+        <b>Description:</b> Present the rate of people above 65 years." title="Map details"><img src="/img/elderly.jpg" alt="Elderly population rate map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/current_population/">Elderly population rate map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/current_risk/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGISOnline <br />
+        <b>Layer(s):</b> ESRI Server <br />
+        <b>Base layer:</b> ESRI <br />
+        <b>Description:</b> Showecase the key infrastrutcutres on the island." title="Map details"><img src="/img/key_infr.jpg" alt="Key infrastructure map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/current_risk/">Key infrastructure map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/current_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS <br />
+        <b>Layer(s):</b> SHP <br />
+        <b>Base layer:</b> ArcGIS Online <br />
+        <b>Description:</b> Showecase the soil types on the Isle of Wight." title="Map details"><img src="/img/curr_soil.jpg" alt="Current soil map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/current_soil/">Current soil map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/current_unskilled_pop/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> ArcGIS JS API <br />
+        <b>Layer(s):</b> ESRI Server <br />
+        <b>Base layer:</b> ESRI <br />
+        <b>Description:</b> Present the rates of unskilled and unemployed population in the PO areas." title="Map details"><img src="/img/unskilled.jpg" alt="Unskilled population"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/current_unskilled_pop/">Unskilled population</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<p class="bg-primary">Google Maps</p>
+<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_mastpylon/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the electric pylons and masts with toggle buttons." title="Map details"><img src="/img/elec.jpg" alt="Electricity infrastructure map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_mastpylon/">Electricity infrastructure map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_road_town/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the roads and towns on the island." title="Map details"><img src="/img/prop_road_town.jpg" alt="Road and town map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_road_town/">Road and town map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_soil/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> Google Maps <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Google Maps <br />
+        <b>Description:</b> Present the soil map." title="Map details"><img src="/img/iow_soil.jpg" alt="Soil map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_soil/">Soil map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+</div>
+<p class="bg-primary">OpenLayers</p>
+<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_flood/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Showecase the flood risk on the Isle of Wight" title="Map details"><img src="/img/iow_flood.jpg" alt="Flood risk map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_flood/">Flood risk map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_flood_woodland/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Present the  flood and woodland areas with opacity toggle buttons" title="Map details"><img src="/img/flood_wood.jpg" alt="Flood and woodland map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_flood_woodland/">Flood and woodland map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_rainfall/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> OpenLayers <br />
+        <b>Layer(s):</b> KML <br />
+        <b>Base layer:</b> Bing Maps <br />
+        <b>Description:</b> Present the rainfall map." title="Map details"><img src="/img/prop_rainfall.jpg" alt="Rainfall map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_rainfall/">Rainfall map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+
+
+
+</div>
+<p class="bg-primary">LeafletJS</p>
+<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_exposed/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> WMS (from GeoServer) + KML as GeoJSON <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Show the areas with high wind exposure and key infrastructure." title="Map details"><img src="/img/wind_exposed.jpg" alt="Wind exposure map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_exposed/">Wind exposure map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 col-lg-4">
+    <div class="thumbnail" style="width: 100%; display: block;">
+        <a href="/maps/proposed_marine/" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="top"
+        data-content="<b>Map type:</b> LeafletJS <br />
+        <b>Layer(s):</b> WMS <br />
+        <b>Base layer:</b> MapBox <br />
+        <b>Description:</b> Showecase the marine bedrock types." title="Map details"><img src="/img/iow_bedr.jpg" alt="Marine bedrock map"></a>
+        <div style="min-height:50;overflow:hidden;">
+        <p><strong><a href="/maps/proposed_marine/">Marine bedrock map</a></strong> </br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
 
 
