@@ -42,6 +42,10 @@ The site is created with modular design approach, therefore to avoid repetition,
 ```
 {% include secure_warning.html %}
 ```
+An example of this is the following warning:
+
+![alt text](http://i.imgur.com/OpbdGdJ.png "Toggle buttons")
+
 
 The site also makes use of Jekyll "global" variables, and stores them in the config file. Later these variables are used as:
 
@@ -49,6 +53,8 @@ The site also makes use of Jekyll "global" variables, and stores them in the con
 {{ site.gm_api_key }}
 ```
 This way the Google maps API key can be referenced from every page of the site.
+
+#### Custom functions
 
 A set of custom functions were implemented to control layers from Google Maps and OpenLayers.
 This includes toggle buttons:
@@ -101,7 +107,7 @@ console.log(layer.getOpacity());
 }
 ```
 
-The functions are called by
+And the functions are called by the HTML elements:
 ```HTML
 <strong>Flood area opacity:</strong>
 <button type="button" class="btn btn-default" onclick="increaseLayerOpacity(flood);">+</button>
@@ -127,6 +133,28 @@ Open-Source tools:
 * LeafletJS
 * OpenStreetMap
 
+
+## Site structure
+#### Home
+The home page intends to present the project and to show a give a short introduction about the current  state of web mapping tools used by the Isle of Wight. In addition the general assumptions of the proposed web mapping solutions is explained.
+
+![alt text](http://i.imgur.com/st7qBlJ.png "Toggle buttons")
+
+#### Current maps
+The current maps page shows a list of the current maps.
+![alt text](http://i.imgur.com/Q70cHu0.png "Toggle buttons")
+
+#### Proposed maps
+The proposed maps page shows a list of the proposed maps.
+
+#### Tourist maps
+The tourist map page shows a proposed image map for the Isle of Wight with tourist information. The destinations are presented with Bootstrap Modals.
+![alt text](http://i.imgur.com/yVzwTDO.png "Toggle buttons")
+
+#### Filter
+The filter page shows the current and proposed maps categorized by the layer data source and the used web mapping technology.
+![alt text](http://i.imgur.com/GQFWawk.png "Toggle buttons")
+
 ## Warning
 Modern browsers do not allow HTTP requests in sites using HTTPS.
 Since Github pages uses HTTPS and the CU server uses HTTP, some requests are blocked.
@@ -143,6 +171,7 @@ On Windows:
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-running-insecure-content
 ```
 Please make sure to close every chrome instance before, otherwise chrome will just start a new tab in the current session.
+
 
 ## To examine the project locally:
 * Clone or download the repository
